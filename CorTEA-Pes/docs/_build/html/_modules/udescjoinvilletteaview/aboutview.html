@@ -1,0 +1,222 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>udescjoinvilletteaview.aboutview &mdash; ttea 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ttea
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">T-TEA2.0-1</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ttea</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">udescjoinvilletteaview.aboutview</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for udescjoinvilletteaview.aboutview</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtWidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">QDialog</span><span class="p">,</span> <span class="n">QVBoxLayout</span><span class="p">,</span> <span class="n">QLabel</span><span class="p">,</span> <span class="n">QTextBrowser</span><span class="p">,</span> <span class="n">QPushButton</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtGui</span><span class="w"> </span><span class="kn">import</span> <span class="n">QPixmap</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Qt</span><span class="p">,</span> <span class="n">QCoreApplication</span>  <span class="c1"># Necessário para translate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteaapp.windowconfig</span><span class="w"> </span><span class="kn">import</span> <span class="n">WindowConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteautil.pathconfig</span><span class="w"> </span><span class="kn">import</span> <span class="n">PathConfig</span>
+
+<div class="viewcode-block" id="AboutView">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.aboutview.AboutView">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AboutView</span><span class="p">(</span><span class="n">QDialog</span><span class="p">,</span> <span class="n">WindowConfig</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exibe janela de sobre como modal&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setModal</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Define como modal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">translator</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">translator</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="s2">&quot;translator&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup_window</span><span class="p">(</span>
+            <span class="n">parent</span><span class="o">.</span><span class="n">get_title</span><span class="p">(),</span>                          <span class="c1"># title</span>
+            <span class="n">parent</span><span class="o">.</span><span class="n">windowIcon</span><span class="p">()</span> <span class="k">if</span> <span class="n">parent</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># icon</span>
+            <span class="n">WindowConfig</span><span class="o">.</span><span class="n">DECREMENT_SIZE_PERCENT</span><span class="p">,</span> <span class="c1"># status</span>
+            <span class="mi">25</span><span class="p">,</span>                                  <span class="c1"># width</span>
+            <span class="mi">0</span><span class="p">,</span>                                  <span class="c1"># height</span>
+            <span class="n">parent</span>                               <span class="c1"># parent</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Layout principal</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">()</span>
+
+        <span class="c1"># Texto explicativo do projeto</span>
+        <span class="n">project_description</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;&lt;b&gt;T-TEA&lt;/b&gt; é um console para exergames de Chão Interativo &quot;</span>
+            <span class="s2">&quot;voltados ao público com Transtorno do Espectro Autista (TEA), &quot;</span>
+            <span class="s2">&quot;mas não exclusivamente. Desenvolvido pela UDESC Joinville - Larva.&quot;</span>
+        <span class="p">))</span>
+        <span class="n">project_description</span><span class="o">.</span><span class="n">setWordWrap</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">project_description</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">project_description</span><span class="p">)</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addSpacing</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Espaço reduzido para consistência</span>
+
+        <span class="c1"># Imagem ocupando área disponível</span>
+        <span class="n">image_path</span> <span class="o">=</span> <span class="n">PathConfig</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&quot;ttealogo.png&quot;</span><span class="p">)</span>
+        <span class="n">pixmap</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+        <span class="n">image_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">()</span>
+        <span class="n">image_label</span><span class="o">.</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">pixmap</span><span class="o">.</span><span class="n">scaledToWidth</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">Qt</span><span class="o">.</span><span class="n">SmoothTransformation</span><span class="p">))</span>  <span class="c1"># Escala imagem para tamanho fixo</span>
+        <span class="n">image_label</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">image_label</span><span class="p">,</span> <span class="n">stretch</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Prioridade à imagem</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addSpacing</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Espaço consistente após imagem</span>
+
+        <span class="c1"># Link clicável</span>
+        <span class="n">link_label</span> <span class="o">=</span> <span class="n">QTextBrowser</span><span class="p">()</span>
+        <span class="n">link_label</span><span class="o">.</span><span class="n">setOpenExternalLinks</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">link_label</span><span class="o">.</span><span class="n">setText</span><span class="p">((</span>
+            <span class="s2">&quot;&lt;a href=&#39;https://udescmove2learn.wordpress.com/2023/06/26/t-tea/&#39;&gt;</span><span class="si">{}</span><span class="s2">&lt;/a&gt;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Saiba mais sobre a Plataforma!&quot;</span><span class="p">)))</span>
+        <span class="n">link_label</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">link_label</span><span class="o">.</span><span class="n">setFixedHeight</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>  <span class="c1"># Altura fixa para consistência</span>
+        <span class="n">link_label</span><span class="o">.</span><span class="n">setToolTip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Link plataforma T-TEA&quot;</span><span class="p">))</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">link_label</span><span class="p">)</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addSpacing</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Espaço consistente após o link</span>
+
+        <span class="c1"># Texto com desenvolvedores e data</span>
+        <span class="n">developers_text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;&lt;b&gt;</span><span class="si">{}</span><span class="s2">&lt;/b&gt;&lt;br&gt;&quot;</span>
+        <span class="s2">&quot;&lt;span style=&#39;font-size: 10px;&#39;&gt;&quot;</span>
+        <span class="s2">&quot;1. Marcelo da Silva Hounsell&lt;br&gt;&quot;</span>
+        <span class="s2">&quot;2. Andre Bonetto Trindade&lt;br&gt;&quot;</span>
+        <span class="s2">&quot;3. Gabriel Brunelli Pereira&lt;br&gt;&quot;</span>
+        <span class="s2">&quot;4. Marlow Rodrigo Becker Dickel&lt;br&gt;&quot;</span>
+        <span class="s2">&quot;5. Luis Eduardo Bet&lt;br&gt;&quot;</span>
+        <span class="s2">&quot;6. Alexandre Altair de Melo&lt;br&gt;&quot;</span>
+        <span class="s2">&quot;&lt;br&gt;&quot;</span>
+        <span class="s2">&quot;&lt;i&gt;</span><span class="si">{}</span><span class="s2">: 2021 - </span><span class="si">{}</span><span class="s2">&lt;/i&gt;&quot;</span>
+        <span class="s2">&quot;&lt;/span&gt;&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Desenvolvido por:&quot;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Desde&quot;</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y&#39;</span><span class="p">))</span>
+        
+        <span class="n">developers_label</span> <span class="o">=</span> <span class="n">QTextBrowser</span><span class="p">()</span>
+        <span class="n">developers_label</span><span class="o">.</span><span class="n">setHtml</span><span class="p">(</span><span class="n">developers_text</span><span class="p">)</span>
+        <span class="n">developers_label</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">developers_label</span><span class="o">.</span><span class="n">setFixedHeight</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>  <span class="c1"># Altura fixa para evitar expansão excessiva</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">developers_label</span><span class="p">)</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addSpacing</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Espaço consistente antes do botão</span>
+
+        <span class="c1"># Botão OK centralizado</span>
+        <span class="n">ok_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;OK&quot;</span><span class="p">)</span>
+        <span class="n">ok_button</span><span class="o">.</span><span class="n">setFixedWidth</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">ok_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">)</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">ok_button</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        
+        <span class="c1"># Espaço flexível no final</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addStretch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Mantém o layout balanceado</span>
+
+        <span class="c1"># Configura o layout na janela</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_apply_styles</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_apply_styles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Aplica estilos à interface&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            QLabel { </span>
+<span class="s2">                font-size: 14px; </span>
+<span class="s2">                padding: 5px; </span>
+<span class="s2">                margin: 0px;</span>
+<span class="s2">            }</span>
+<span class="s2">            QTextBrowser { </span>
+<span class="s2">                font-size: 14px; </span>
+<span class="s2">                padding: 5px; </span>
+<span class="s2">                margin: 0px;</span>
+<span class="s2">                border: none; </span>
+<span class="s2">                background: transparent; </span>
+<span class="s2">            }</span>
+<span class="s2">            QPushButton {</span>
+<span class="s2">                font-size: 14px;</span>
+<span class="s2">                padding: 5px;</span>
+<span class="s2">                margin: 5px;</span>
+<span class="s2">            }</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025-2025, Udesc - Larva.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

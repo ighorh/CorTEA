@@ -1,0 +1,27 @@
+{
+    "authors": [
+        "Gabriel Brunelli Pereira",
+        "Alexandre Altair de Melo"
+    ],
+    "contact_email": "",
+    "exec": "kartea.py",
+    "game": "KarTEA",
+    "icon": "resources/icons/kartea4.ico",
+    "language":{
+        "en_US":{
+             "name": "KarTEA: Racing Game",
+             "description": "A game to aid in the development of sensory processing"
+        },
+        "es_ES": {
+            "name": "KarTEA: Juego de Carreras",
+            "description": "Un juego para ayudar en el desarrollo del procesamiento sensorial"
+        },
+        "pt_BR": {
+            "name": "KarTEA: Jogo de Corrida",
+            "description": "Um jogo para auxiliar no desenvolvimento do processamento sensorial"
+        }
+    },
+    "since": "2023",
+    "website": "https://udescmove2learn.wordpress.com/",
+    "version": "2.0.0"
+}

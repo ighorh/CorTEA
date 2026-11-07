@@ -1,0 +1,27 @@
+{
+    "authors": [
+        "Ighor Henrique Lima Barbosa",
+        "Leonardo Rodrigues Martins"
+    ],
+    "contact_email": "",
+    "exec": "cortea.py",
+    "game": "CorTEA",
+    "icon": "resources/icons/CorTea.ico",
+    "language":{
+        "en_US":{
+             "name": "CorTEA: Path of Colors",
+             "description": "A game to aid in the development of sensory processing"
+        },
+        "es_ES": {
+            "name": "CorTEA: Camino de los Colores",
+            "description": "Un juego para ayudar en el desarrollo del procesamiento sensorial"
+        },
+        "pt_BR": {
+            "name": "CorTEA: Caminho das Cores",
+            "description": "Um jogo para auxiliar no desenvolvimento do processamento sensorial"
+        }
+    },
+    "since": "2026",
+    "website": "https://udescmove2learn.wordpress.com/",
+    "version": "1.0.0"
+}

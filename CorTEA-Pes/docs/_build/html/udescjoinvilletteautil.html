@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>udescjoinvilletteautil package &mdash; ttea 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="udescjoinvilletteaview package" href="udescjoinvilletteaview.html" />
+    <link rel="prev" title="udescjoinvilletteamodel package" href="udescjoinvilletteamodel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ttea
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">T-TEA2.0-1</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mainnovo.html">mainnovo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteaapp.html">udescjoinvilletteaapp package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteacontroller.html">udescjoinvilletteacontroller package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteacore.html">udescjoinvilletteacore package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteadao.html">udescjoinvilletteadao package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteagames.html">udescjoinvilletteagames package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteamodel.html">udescjoinvilletteamodel package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">udescjoinvilletteautil package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-udescjoinvilletteautil.cvshandler">udescjoinvilletteautil.cvshandler module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#udescjoinvilletteautil.cvshandler.CSVHandler"><code class="docutils literal notranslate"><span class="pre">CSVHandler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-udescjoinvilletteautil.log">udescjoinvilletteautil.log module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#udescjoinvilletteautil.log.Log"><code class="docutils literal notranslate"><span class="pre">Log</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-udescjoinvilletteautil.pathconfig">udescjoinvilletteautil.pathconfig module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig"><code class="docutils literal notranslate"><span class="pre">PathConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-udescjoinvilletteautil">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteaview.html">udescjoinvilletteaview package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ttea</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">T-TEA2.0-1</a></li>
+      <li class="breadcrumb-item active">udescjoinvilletteautil package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/udescjoinvilletteautil.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="udescjoinvilletteautil-package">
+<h1>udescjoinvilletteautil package<a class="headerlink" href="#udescjoinvilletteautil-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-udescjoinvilletteautil.cvshandler">
+<span id="udescjoinvilletteautil-cvshandler-module"></span><h2>udescjoinvilletteautil.cvshandler module<a class="headerlink" href="#module-udescjoinvilletteautil.cvshandler" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.cvshandler.CSVHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">udescjoinvilletteautil.cvshandler.</span></span><span class="sig-name descname"><span class="pre">CSVHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'excel'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">';'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quotechar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'&quot;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doublequote</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipinitialspace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineterminator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'\n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quoting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/cvshandler.html#CSVHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.cvshandler.CSVHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe para manipulação de arquivos CSV com dialeto personalizado.</p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>get_archives</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_last_serial</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>read_csv</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>write_csv</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.cvshandler.CSVHandler.get_archives">
+<span class="sig-name descname"><span class="pre">get_archives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/cvshandler.html#CSVHandler.get_archives"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.cvshandler.CSVHandler.get_archives" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.cvshandler.CSVHandler.get_last_serial">
+<span class="sig-name descname"><span class="pre">get_last_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/cvshandler.html#CSVHandler.get_last_serial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.cvshandler.CSVHandler.get_last_serial" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.cvshandler.CSVHandler.read_csv">
+<span class="sig-name descname"><span class="pre">read_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/cvshandler.html#CSVHandler.read_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.cvshandler.CSVHandler.read_csv" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.cvshandler.CSVHandler.write_csv">
+<span class="sig-name descname"><span class="pre">write_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/cvshandler.html#CSVHandler.write_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.cvshandler.CSVHandler.write_csv" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-udescjoinvilletteautil.log">
+<span id="udescjoinvilletteautil-log-module"></span><h2>udescjoinvilletteautil.log module<a class="headerlink" href="#module-udescjoinvilletteautil.log" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.log.Log">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">udescjoinvilletteautil.log.</span></span><span class="sig-name descname"><span class="pre">Log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/log.html#Log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.log.Log" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteautil.log.Log.get_system_info" title="udescjoinvilletteautil.log.Log.get_system_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_system_info</span></code></a>()</p></td>
+<td><p>Retorna informações do sistema, hardware e memória.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteautil.log.Log.log_error" title="udescjoinvilletteautil.log.Log.log_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_error</span></code></a>(message)</p></td>
+<td><p>Registra um erro.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteautil.log.Log.log_error_with_stack" title="udescjoinvilletteautil.log.Log.log_error_with_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_error_with_stack</span></code></a>(exception)</p></td>
+<td><p>Registra um erro com a pilha de execução completa.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteautil.log.Log.log_info" title="udescjoinvilletteautil.log.Log.log_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_info</span></code></a>(message)</p></td>
+<td><p>Registra uma mensagem informativa.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteautil.log.Log.log_warning" title="udescjoinvilletteautil.log.Log.log_warning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_warning</span></code></a>(message)</p></td>
+<td><p>Registra um aviso.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>log_system_info</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.log.Log.FILE">
+<span class="sig-name descname"><span class="pre">FILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'C:\\dev\\T-TEA2.0-1\\docs\\log\\tteaapp.log'</span></em><a class="headerlink" href="#udescjoinvilletteautil.log.Log.FILE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.log.Log.get_system_info">
+<span class="sig-name descname"><span class="pre">get_system_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/log.html#Log.get_system_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.log.Log.get_system_info" title="Link to this definition"></a></dt>
+<dd><p>Retorna informações do sistema, hardware e memória.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.log.Log.log_error">
+<span class="sig-name descname"><span class="pre">log_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/log.html#Log.log_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.log.Log.log_error" title="Link to this definition"></a></dt>
+<dd><p>Registra um erro.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – Mensagem de erro.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.log.Log.log_error_with_stack">
+<span class="sig-name descname"><span class="pre">log_error_with_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/log.html#Log.log_error_with_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.log.Log.log_error_with_stack" title="Link to this definition"></a></dt>
+<dd><p>Registra um erro com a pilha de execução completa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>exception</strong> (<em>Exception</em>) – Exceção capturada.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.log.Log.log_info">
+<span class="sig-name descname"><span class="pre">log_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/log.html#Log.log_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.log.Log.log_info" title="Link to this definition"></a></dt>
+<dd><p>Registra uma mensagem informativa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – Mensagem a ser registrada.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.log.Log.log_system_info">
+<span class="sig-name descname"><span class="pre">log_system_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/log.html#Log.log_system_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.log.Log.log_system_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.log.Log.log_warning">
+<span class="sig-name descname"><span class="pre">log_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteautil/log.html#Log.log_warning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.log.Log.log_warning" title="Link to this definition"></a></dt>
+<dd><p>Registra um aviso.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – Mensagem de aviso.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-udescjoinvilletteautil.pathconfig">
+<span id="udescjoinvilletteautil-pathconfig-module"></span><h2>udescjoinvilletteautil.pathconfig module<a class="headerlink" href="#module-udescjoinvilletteautil.pathconfig" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">udescjoinvilletteautil.pathconfig.</span></span><span class="sig-name descname"><span class="pre">PathConfig</span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe para configuração de caminhos de arquivos e diretórios.</p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig.icon" title="udescjoinvilletteautil.pathconfig.PathConfig.icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icon</span></code></a>(filename)</p></td>
+<td><p>Retorna o caminho completo para um arquivo de ícone.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig.image" title="udescjoinvilletteautil.pathconfig.PathConfig.image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">image</span></code></a>(filename)</p></td>
+<td><p>Retorna o caminho completo para um arquivo de imagem.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig.inifile" title="udescjoinvilletteautil.pathconfig.PathConfig.inifile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inifile</span></code></a>(filename)</p></td>
+<td><p>Retorna o caminho completo para um arquivo de ini no raiz.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig.log" title="udescjoinvilletteautil.pathconfig.PathConfig.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(filename)</p></td>
+<td><p>Retorna o caminho completo para um arquivo de log.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig.path_games" title="udescjoinvilletteautil.pathconfig.PathConfig.path_games"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_games</span></code></a>()</p></td>
+<td><p>Retorna uma lista com os nomes dos diretórios de jogos.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig.path_help_pt" title="udescjoinvilletteautil.pathconfig.PathConfig.path_help_pt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">path_help_pt</span></code></a>(filename)</p></td>
+<td><p>Retorna o caminho completo para um arquivo de help.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig.player" title="udescjoinvilletteautil.pathconfig.PathConfig.player"><code class="xref py py-obj docutils literal notranslate"><span class="pre">player</span></code></a>(filename)</p></td>
+<td><p>Retorna o caminho completo para um arquivo de jogador.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteautil.pathconfig.PathConfig.translation" title="udescjoinvilletteautil.pathconfig.PathConfig.translation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">translation</span></code></a>(filename)</p></td>
+<td><p>Retorna o caminho completo para um arquivo de tradução.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.assets_dir">
+<span class="sig-name descname"><span class="pre">assets_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/assets')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.assets_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.games_dir">
+<span class="sig-name descname"><span class="pre">games_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/udescjoinvilletteagames')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.games_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.helps_dir">
+<span class="sig-name descname"><span class="pre">helps_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/help')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.helps_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.helps_dir_pt">
+<span class="sig-name descname"><span class="pre">helps_dir_pt</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/help/pt')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.helps_dir_pt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.icon">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig.icon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.icon" title="Link to this definition"></a></dt>
+<dd><p>Retorna o caminho completo para um arquivo de ícone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Nome do arquivo de ícone.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Caminho completo para o arquivo de ícone.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.icons_dir">
+<span class="sig-name descname"><span class="pre">icons_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/assets/icons')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.icons_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.image">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig.image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.image" title="Link to this definition"></a></dt>
+<dd><p>Retorna o caminho completo para um arquivo de imagem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Nome do arquivo de imagem.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Caminho completo para o arquivo de imagem.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.images_dir">
+<span class="sig-name descname"><span class="pre">images_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/assets/images')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.images_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.inifile">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inifile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig.inifile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.inifile" title="Link to this definition"></a></dt>
+<dd><p>Retorna o caminho completo para um arquivo de ini no raiz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Nome do arquivo de ini.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Caminho completo para o arquivo de ini.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.log">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig.log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.log" title="Link to this definition"></a></dt>
+<dd><p>Retorna o caminho completo para um arquivo de log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Nome do arquivo de log.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Caminho completo para o arquivo de log.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.log_dir">
+<span class="sig-name descname"><span class="pre">log_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/log')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.log_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.path_games">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">path_games</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig.path_games"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.path_games" title="Link to this definition"></a></dt>
+<dd><p>Retorna uma lista com os nomes dos diretórios de jogos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista com os nomes dos diretórios dentro do diretório de jogos.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – Se o diretório de jogos não existir.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.path_help_pt">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">path_help_pt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig.path_help_pt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.path_help_pt" title="Link to this definition"></a></dt>
+<dd><p>Retorna o caminho completo para um arquivo de help.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Nome do arquivo de help.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Caminho completo para o arquivo de tradução.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.player">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">player</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig.player"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.player" title="Link to this definition"></a></dt>
+<dd><p>Retorna o caminho completo para um arquivo de jogador.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Nome do arquivo de jogador.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Caminho completo para o arquivo de jogador.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.players_dir">
+<span class="sig-name descname"><span class="pre">players_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/players')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.players_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.root">
+<span class="sig-name descname"><span class="pre">root</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.root" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.translation">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/udescjoinvilletteautil/pathconfig.html#PathConfig.translation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.translation" title="Link to this definition"></a></dt>
+<dd><p>Retorna o caminho completo para um arquivo de tradução.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Nome do arquivo de tradução.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Caminho completo para o arquivo de tradução.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteautil.pathconfig.PathConfig.translations_dir">
+<span class="sig-name descname"><span class="pre">translations_dir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">WindowsPath('C:/dev/T-TEA2.0-1/docs/translations')</span></em><a class="headerlink" href="#udescjoinvilletteautil.pathconfig.PathConfig.translations_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-udescjoinvilletteautil">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-udescjoinvilletteautil" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="udescjoinvilletteamodel.html" class="btn btn-neutral float-left" title="udescjoinvilletteamodel package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="udescjoinvilletteaview.html" class="btn btn-neutral float-right" title="udescjoinvilletteaview package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025-2025, Udesc - Larva.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
