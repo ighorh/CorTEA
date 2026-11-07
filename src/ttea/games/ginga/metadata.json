@@ -1,0 +1,19 @@
+{
+    "game": "Ginga",
+    "exec": "Gingada.Divina.exe",
+    "icon": "",
+    "language":{
+        "pt_BR": {
+            "name": "Ginga Jogo de Dança",
+            "description": "Um de dança divido"
+        },
+        "es_ES": {
+            "name": "Ginga: Juego de Danza",
+            "description": "Un juego divido de baile"
+        },
+        "en_US":{
+             "name": "Ginga: Dance Game",
+             "description": "A divided dance game"
+        }
+    }
+}

@@ -1,0 +1,1591 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>udescjoinvilletteaapp package &mdash; ttea 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="udescjoinvilletteacontroller package" href="udescjoinvilletteacontroller.html" />
+    <link rel="prev" title="mainnovo module" href="mainnovo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ttea
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">T-TEA2.0-1</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mainnovo.html">mainnovo module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">udescjoinvilletteaapp package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-udescjoinvilletteaapp.menuhandler">udescjoinvilletteaapp.menuhandler module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#udescjoinvilletteaapp.menuhandler.MenuHandler"><code class="docutils literal notranslate"><span class="pre">MenuHandler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-udescjoinvilletteaapp.tteaapp">udescjoinvilletteaapp.tteaapp module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#udescjoinvilletteaapp.tteaapp.TTeaApp"><code class="docutils literal notranslate"><span class="pre">TTeaApp</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-udescjoinvilletteaapp.windowconfig">udescjoinvilletteaapp.windowconfig module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#udescjoinvilletteaapp.windowconfig.WindowConfig"><code class="docutils literal notranslate"><span class="pre">WindowConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-udescjoinvilletteaapp">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteacontroller.html">udescjoinvilletteacontroller package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteacore.html">udescjoinvilletteacore package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteadao.html">udescjoinvilletteadao package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteagames.html">udescjoinvilletteagames package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteamodel.html">udescjoinvilletteamodel package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteautil.html">udescjoinvilletteautil package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="udescjoinvilletteaview.html">udescjoinvilletteaview package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ttea</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">T-TEA2.0-1</a></li>
+      <li class="breadcrumb-item active">udescjoinvilletteaapp package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/udescjoinvilletteaapp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="udescjoinvilletteaapp-package">
+<h1>udescjoinvilletteaapp package<a class="headerlink" href="#udescjoinvilletteaapp-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-udescjoinvilletteaapp.menuhandler">
+<span id="udescjoinvilletteaapp-menuhandler-module"></span><h2>udescjoinvilletteaapp.menuhandler module<a class="headerlink" href="#module-udescjoinvilletteaapp.menuhandler" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.menuhandler.MenuHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">udescjoinvilletteaapp.menuhandler.</span></span><span class="sig-name descname"><span class="pre">MenuHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/menuhandler.html#MenuHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.menuhandler.MenuHandler" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>Classe para gerenciar ações do menu</p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.confirm_exit" title="udescjoinvilletteaapp.menuhandler.MenuHandler.confirm_exit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">confirm_exit</span></code></a>([event])</p></td>
+<td><p>Confirmação de saída do sistema</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.do_nothing" title="udescjoinvilletteaapp.menuhandler.MenuHandler.do_nothing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">do_nothing</span></code></a>()</p></td>
+<td><p>Ação placeholder para funcionalidades não implementadas</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.show_help" title="udescjoinvilletteaapp.menuhandler.MenuHandler.show_help"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_help</span></code></a>()</p></td>
+<td><p>Abre o Qt Assistant com o arquivo de ajuda especificado.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>blockSignals</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>call_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>childEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>children</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>connect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>connectNotify</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>customEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>deleteLater</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>destroyed</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>disconnect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>disconnectNotify</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dumpObjectInfo</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dumpObjectTree</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dynamicPropertyNames</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>emit</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>event</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>eventFilter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>findChild</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>findChildren</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>inherits</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>installEventFilter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isQuickItemType</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isSignalConnected</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isWidgetType</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isWindowType</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>killTimer</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>metaObject</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>moveToThread</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>objectName</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>objectNameChanged</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>parent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>property</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>receivers</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>removeEventFilter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>sender</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>senderSignalIndex</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setObjectName</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setParent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setProperty</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>show_about</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>signalsBlocked</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>startTimer</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>thread</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>timerEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tr</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.menuhandler.MenuHandler.call_selection">
+<span class="sig-name descname"><span class="pre">call_selection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/menuhandler.html#MenuHandler.call_selection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.call_selection" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.menuhandler.MenuHandler.confirm_exit">
+<span class="sig-name descname"><span class="pre">confirm_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/menuhandler.html#MenuHandler.confirm_exit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.confirm_exit" title="Link to this definition"></a></dt>
+<dd><p>Confirmação de saída do sistema</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.menuhandler.MenuHandler.do_nothing">
+<span class="sig-name descname"><span class="pre">do_nothing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/menuhandler.html#MenuHandler.do_nothing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.do_nothing" title="Link to this definition"></a></dt>
+<dd><p>Ação placeholder para funcionalidades não implementadas</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.menuhandler.MenuHandler.show_about">
+<span class="sig-name descname"><span class="pre">show_about</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/menuhandler.html#MenuHandler.show_about"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.show_about" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.menuhandler.MenuHandler.show_help">
+<span class="sig-name descname"><span class="pre">show_help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/menuhandler.html#MenuHandler.show_help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.show_help" title="Link to this definition"></a></dt>
+<dd><p>Abre o Qt Assistant com o arquivo de ajuda especificado.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.menuhandler.MenuHandler.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;MenuHandler&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QObject&quot;:</span> <span class="pre">)</span></em><a class="headerlink" href="#udescjoinvilletteaapp.menuhandler.MenuHandler.staticMetaObject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-udescjoinvilletteaapp.tteaapp">
+<span id="udescjoinvilletteaapp-tteaapp-module"></span><h2>udescjoinvilletteaapp.tteaapp module<a class="headerlink" href="#module-udescjoinvilletteaapp.tteaapp" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">udescjoinvilletteaapp.tteaapp.</span></span><span class="sig-name descname"><span class="pre">TTeaApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/tteaapp.html#TTeaApp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code>, <a class="reference internal" href="#udescjoinvilletteaapp.windowconfig.WindowConfig" title="udescjoinvilletteaapp.windowconfig.WindowConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">WindowConfig</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>painters</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.close_event" title="udescjoinvilletteaapp.tteaapp.TTeaApp.close_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close_event</span></code></a>(event)</p></td>
+<td><p>Sobrescreve o evento de fechamento da janela</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.populate_menu" title="udescjoinvilletteaapp.tteaapp.TTeaApp.populate_menu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">populate_menu</span></code></a>(menu, items)</p></td>
+<td><p>Preenche um menu com itens</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.setup_menu" title="udescjoinvilletteaapp.tteaapp.TTeaApp.setup_menu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_menu</span></code></a>()</p></td>
+<td><p>Configura o menu principal</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.setup_status_bar" title="udescjoinvilletteaapp.tteaapp.TTeaApp.setup_status_bar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_status_bar</span></code></a>(version)</p></td>
+<td><p>Configura a barra de status</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>DockOption</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>PaintDeviceMetric</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RenderFlag</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>acceptDrops</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>accessibleDescription</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>accessibleName</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>actionEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>actions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>activateWindow</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>addAction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>addActions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>addDockWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>addToolBar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>addToolBarBreak</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>adjustSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>autoFillBackground</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>backgroundRole</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>backingStore</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>baseSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>blockSignals</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>centralWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>changeEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>childAt</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>childEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>children</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>childrenRect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>childrenRegion</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>clearFocus</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>clearMask</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>close</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>closeEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>colorCount</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>connect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>connectNotify</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>contentsMargins</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>contentsRect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>contextMenuEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>contextMenuPolicy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>corner</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>create</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>createPopupMenu</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>createWinId</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>createWindowContainer</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>cursor</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>customContextMenuRequested</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>customEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>deleteLater</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>depth</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>destroy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>destroyed</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>devType</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>devicePixelRatio</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>devicePixelRatioF</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>devicePixelRatioFScale</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>disconnect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>disconnectNotify</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dockOptions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dockWidgetArea</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>documentMode</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dragEnterEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dragLeaveEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dragMoveEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dropEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dumpObjectInfo</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dumpObjectTree</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dynamicPropertyNames</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>effectiveWinId</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>emit</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>encodeMetricF</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ensurePolished</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>enterEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>event</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>eventFilter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>find</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>findChild</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>findChildren</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>focusInEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>focusNextChild</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>focusNextPrevChild</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>focusOutEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>focusPolicy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>focusPreviousChild</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>focusProxy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>focusWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>font</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>fontInfo</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>fontMetrics</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>foregroundRole</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>frameGeometry</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>frameSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>geometry</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_title</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>grab</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>grabGesture</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>grabKeyboard</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>grabMouse</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>grabShortcut</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>graphicsEffect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>graphicsProxyWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>hasFocus</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>hasHeightForWidth</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>hasMouseTracking</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>hasTabletTracking</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>height</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>heightForWidth</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>heightMM</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>hide</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>hideEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>iconSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>iconSizeChanged</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>inherits</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>initPainter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>inputMethodEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>inputMethodHints</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>inputMethodQuery</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>insertAction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>insertActions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>insertToolBar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>insertToolBarBreak</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>installEventFilter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>internalWinId</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isActiveWindow</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isAncestorOf</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isAnimated</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isDockNestingEnabled</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isEnabled</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isEnabledTo</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isFullScreen</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isHidden</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isLeftToRight</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isMaximized</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isMinimized</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isModal</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isQuickItemType</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isRightToLeft</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isSeparator</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isSignalConnected</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isTopLevel</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isVisible</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isVisibleTo</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isWidgetType</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isWindow</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>isWindowModified</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>isWindowType</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>keyPressEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>keyReleaseEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>keyboardGrabber</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>killTimer</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>layout</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>layoutDirection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>leaveEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>locale</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>logicalDpiX</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>logicalDpiY</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>lower</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>mapFrom</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mapFromGlobal</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>mapFromParent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mapTo</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>mapToGlobal</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mapToParent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>mask</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>maximumHeight</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>maximumSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>maximumWidth</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>menuBar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>menuWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>metaObject</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>metric</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>minimumHeight</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>minimumSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>minimumSizeHint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>minimumWidth</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>mouseDoubleClickEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mouseGrabber</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>mouseMoveEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mousePressEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>mouseReleaseEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>move</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>moveEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>moveToThread</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>nativeEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>nativeParentWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>nextInFocusChain</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>normalGeometry</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>objectName</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>objectNameChanged</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>overrideWindowFlags</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>overrideWindowState</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>paintEngine</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>paintEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>paintingActive</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>palette</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>parent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>parentWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>physicalDpiX</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>physicalDpiY</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pos</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>previousInFocusChain</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>property</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>raise_</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>receivers</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>redirected</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>releaseKeyboard</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>releaseMouse</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>releaseShortcut</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>removeAction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>removeDockWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>removeEventFilter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>removeToolBar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>removeToolBarBreak</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>render</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>repaint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>resize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>resizeDocks</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>resizeEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>restoreDockWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>restoreGeometry</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>restoreState</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>saveGeometry</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>saveState</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>screen</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>scroll</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>sender</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>senderSignalIndex</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setAcceptDrops</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setAccessibleDescription</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setAccessibleName</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setAnimated</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setAttribute</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setAutoFillBackground</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setBackgroundRole</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setBaseSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setCentralWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setContentsMargins</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setContextMenuPolicy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setCorner</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setCursor</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setDisabled</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setDockNestingEnabled</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setDockOptions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setDocumentMode</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setEnabled</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setFixedHeight</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setFixedSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setFixedWidth</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setFocus</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setFocusPolicy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setFocusProxy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setFont</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setForegroundRole</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setGeometry</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setGraphicsEffect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setHidden</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setIconSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setInputMethodHints</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setLayout</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setLayoutDirection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setLocale</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setMask</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setMaximumHeight</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setMaximumSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setMaximumWidth</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setMenuBar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setMenuWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setMinimumHeight</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setMinimumSize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setMinimumWidth</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setMouseTracking</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setObjectName</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setPalette</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setParent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setProperty</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setScreen</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setShortcutAutoRepeat</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setShortcutEnabled</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setSizeIncrement</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setSizePolicy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setStatusBar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setStatusTip</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setStyle</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setStyleSheet</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setTabOrder</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setTabPosition</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setTabShape</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setTabletTracking</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setToolButtonStyle</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setToolTip</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setToolTipDuration</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setUnifiedTitleAndToolBarOnMac</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setUpdatesEnabled</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setVisible</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setWhatsThis</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setWindowFilePath</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setWindowFlag</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setWindowFlags</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setWindowIcon</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setWindowIconText</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setWindowModality</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setWindowModified</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setWindowOpacity</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setWindowRole</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setWindowState</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setWindowTitle</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>sharedPainter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>show</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>showEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>showFullScreen</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>showMaximized</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>showMinimized</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>showNormal</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>signalsBlocked</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>size</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>sizeHint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>sizeIncrement</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>sizePolicy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>splitDockWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>stackUnder</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>startTimer</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>statusBar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>statusTip</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>style</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>styleSheet</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tabPosition</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>tabShape</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tabifiedDockWidgetActivated</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>tabifiedDockWidgets</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tabifyDockWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>tabletEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>takeCentralWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>testAttribute</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>thread</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>timerEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>toolBarArea</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>toolBarBreak</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>toolButtonStyle</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>toolButtonStyleChanged</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>toolTip</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>toolTipDuration</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>topLevelWidget</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>tr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>underMouse</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ungrabGesture</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unifiedTitleAndToolBarOnMac</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unsetCursor</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unsetLayoutDirection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unsetLocale</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>update</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>updateGeometry</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>updateMicroFocus</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>updatesEnabled</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>visibleRegion</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>whatsThis</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>wheelEvent</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>width</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>widthMM</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>winId</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>window</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>windowFilePath</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>windowFlags</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>windowHandle</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>windowIcon</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>windowIconChanged</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>windowIconText</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>windowIconTextChanged</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>windowModality</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>windowOpacity</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>windowRole</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>windowState</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>windowTitle</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>windowTitleChanged</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>windowType</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>x</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>y</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.ICON_APP">
+<span class="sig-name descname"><span class="pre">ICON_APP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'C:\\dev\\T-TEA2.0-1\\docs\\assets\\icons\\larva.ico'</span></em><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.ICON_APP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.LOGO_APP">
+<span class="sig-name descname"><span class="pre">LOGO_APP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'C:\\dev\\T-TEA2.0-1\\docs\\assets\\images\\ttealogo.png'</span></em><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.LOGO_APP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.PLATAFORM_MANUAL">
+<span class="sig-name descname"><span class="pre">PLATAFORM_MANUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Manual'</span></em><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.PLATAFORM_MANUAL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.PLATAFORM_SUFIX">
+<span class="sig-name descname"><span class="pre">PLATAFORM_SUFIX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'TEA'</span></em><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.PLATAFORM_SUFIX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.VERSION">
+<span class="sig-name descname"><span class="pre">VERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'2.0'</span></em><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.VERSION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.close_event">
+<span class="sig-name descname"><span class="pre">close_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/tteaapp.html#TTeaApp.close_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.close_event" title="Link to this definition"></a></dt>
+<dd><p>Sobrescreve o evento de fechamento da janela</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.get_title">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/tteaapp.html#TTeaApp.get_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.get_title" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.populate_menu">
+<span class="sig-name descname"><span class="pre">populate_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">menu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/tteaapp.html#TTeaApp.populate_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.populate_menu" title="Link to this definition"></a></dt>
+<dd><p>Preenche um menu com itens</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.setup_menu">
+<span class="sig-name descname"><span class="pre">setup_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/tteaapp.html#TTeaApp.setup_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.setup_menu" title="Link to this definition"></a></dt>
+<dd><p>Configura o menu principal</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.setup_status_bar">
+<span class="sig-name descname"><span class="pre">setup_status_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/udescjoinvilletteaapp/tteaapp.html#TTeaApp.setup_status_bar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.setup_status_bar" title="Link to this definition"></a></dt>
+<dd><p>Configura a barra de status</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.tteaapp.TTeaApp.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;TTeaApp&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QMainWindow&quot;:</span> <span class="pre">)</span></em><a class="headerlink" href="#udescjoinvilletteaapp.tteaapp.TTeaApp.staticMetaObject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-udescjoinvilletteaapp.windowconfig">
+<span id="udescjoinvilletteaapp-windowconfig-module"></span><h2>udescjoinvilletteaapp.windowconfig module<a class="headerlink" href="#module-udescjoinvilletteaapp.windowconfig" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.windowconfig.WindowConfig">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">udescjoinvilletteaapp.windowconfig.</span></span><span class="sig-name descname"><span class="pre">WindowConfig</span></span><a class="reference internal" href="_modules/udescjoinvilletteaapp/windowconfig.html#WindowConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#udescjoinvilletteaapp.windowconfig.WindowConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.windowconfig.WindowConfig.DECREMENT_SIZE_PERCENT">
+<span class="sig-name descname"><span class="pre">DECREMENT_SIZE_PERCENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#udescjoinvilletteaapp.windowconfig.WindowConfig.DECREMENT_SIZE_PERCENT" title="Link to this definition"></a></dt>
+<dd><p>Classe para configurações fixas da janela do app exergame</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.windowconfig.WindowConfig.INCREMENT_SIZE_PERCENT">
+<span class="sig-name descname"><span class="pre">INCREMENT_SIZE_PERCENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#udescjoinvilletteaapp.windowconfig.WindowConfig.INCREMENT_SIZE_PERCENT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="udescjoinvilletteaapp.windowconfig.WindowConfig.STAY_SIZE">
+<span class="sig-name descname"><span class="pre">STAY_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#udescjoinvilletteaapp.windowconfig.WindowConfig.STAY_SIZE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-udescjoinvilletteaapp">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-udescjoinvilletteaapp" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mainnovo.html" class="btn btn-neutral float-left" title="mainnovo module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="udescjoinvilletteacontroller.html" class="btn btn-neutral float-right" title="udescjoinvilletteacontroller package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025-2025, Udesc - Larva.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

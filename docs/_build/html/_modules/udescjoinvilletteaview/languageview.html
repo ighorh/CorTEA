@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>udescjoinvilletteaview.languageview &mdash; ttea 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ttea
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">T-TEA2.0-1</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ttea</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">udescjoinvilletteaview.languageview</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for udescjoinvilletteaview.languageview</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Qt</span><span class="p">,</span> <span class="n">QTranslator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtGui</span><span class="w"> </span><span class="kn">import</span> <span class="n">QIcon</span><span class="p">,</span> <span class="n">QPixmap</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtWidgets</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">QDialog</span><span class="p">,</span>
+    <span class="n">QHBoxLayout</span><span class="p">,</span>
+    <span class="n">QLabel</span><span class="p">,</span>
+    <span class="n">QPushButton</span><span class="p">,</span>
+    <span class="n">QRadioButton</span><span class="p">,</span>
+    <span class="n">QVBoxLayout</span><span class="p">,</span>
+    <span class="n">QMessageBox</span><span class="p">,</span>
+    <span class="n">QApplication</span><span class="p">,</span>  <span class="c1"># Added import for QApplication</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteautil.pathconfig</span><span class="w"> </span><span class="kn">import</span> <span class="n">PathConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteaapp.tteaapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">TTeaApp</span>
+
+<div class="viewcode-block" id="LanguageView">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.languageview.LanguageView">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LanguageView</span><span class="p">(</span><span class="n">QDialog</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Diálogo para seleção de idioma com bandeiras alinhadas ao lado de botões de rádio.&quot;&quot;&quot;</span>
+
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="n">TTeaApp</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span>
+    <span class="n">ICON_APP</span> <span class="o">=</span> <span class="n">PathConfig</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="s2">&quot;larva.ico&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">translator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">translator</span> <span class="o">=</span> <span class="n">translator</span>  <span class="c1"># Objeto tradutor do main.py</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">TITLE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ICON_APP</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio_buttons</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">QRadioButton</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_ui</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_styles</span><span class="p">()</span>
+
+<div class="viewcode-block" id="LanguageView.setup_ui">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.languageview.LanguageView.setup_ui">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setup_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Configura a interface do usuário.&quot;&quot;&quot;</span>
+        <span class="n">main_layout</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">setContentsMargins</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">setSpacing</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">instruction_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Selecione o idioma da aplicação:&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instruction_label</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="s2">&quot;instructionLabel&quot;</span><span class="p">)</span>
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instruction_label</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">languages_layout</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">languages_layout</span><span class="o">.</span><span class="n">setSpacing</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">languages_layout</span><span class="p">)</span>
+
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">addStretch</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">confirm_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Confirmar&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">confirm_button</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="s2">&quot;confirmButton&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">confirm_button</span><span class="o">.</span><span class="n">setFixedWidth</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">confirm_button</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignHCenter</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LanguageView.apply_styles">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.languageview.LanguageView.apply_styles">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply_styles</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Aplica estilos CSS aos botões de rádio.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            QRadioButton#languageRadio {</span>
+<span class="sd">                font-size: 13px;</span>
+<span class="sd">                color: #333333;</span>
+<span class="sd">                spacing: 8px;</span>
+<span class="sd">            }</span>
+<span class="sd">            QRadioButton#languageRadio::indicator {</span>
+<span class="sd">                width: 16px;</span>
+<span class="sd">                height: 16px;</span>
+<span class="sd">            }</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LanguageView.populate_languages">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.languageview.LanguageView.populate_languages">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">populate_languages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">languages</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Preenche a interface com botões de rádio para cada idioma.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">languages</span><span class="p">:</span>
+            <span class="n">item_layout</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">()</span>
+            <span class="n">item_layout</span><span class="o">.</span><span class="n">setSpacing</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+
+            <span class="n">flag_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">()</span>
+            <span class="n">flag_pixmap</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="n">lang</span><span class="p">[</span><span class="s2">&quot;flag&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">scaled</span><span class="p">(</span>
+                <span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="n">Qt</span><span class="o">.</span><span class="n">KeepAspectRatio</span><span class="p">,</span> <span class="n">Qt</span><span class="o">.</span><span class="n">SmoothTransformation</span>
+            <span class="p">)</span>
+            <span class="n">flag_label</span><span class="o">.</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">flag_pixmap</span><span class="p">)</span>
+            <span class="n">flag_label</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+            <span class="n">flag_label</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignVCenter</span><span class="p">)</span>
+            <span class="n">item_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">flag_label</span><span class="p">)</span>
+
+            <span class="n">radio</span> <span class="o">=</span> <span class="n">QRadioButton</span><span class="p">(</span><span class="n">lang</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">])</span>
+            <span class="n">radio</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="s2">&quot;language_code&quot;</span><span class="p">,</span> <span class="n">lang</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">])</span>
+            <span class="n">radio</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="s2">&quot;languageRadio&quot;</span><span class="p">)</span>
+            <span class="c1"># Conecta o sinal toggled ao método de troca de idioma</span>
+            <span class="n">radio</span><span class="o">.</span><span class="n">toggled</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="k">lambda</span> <span class="n">checked</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="n">lang</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]:</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_language</span><span class="p">(</span><span class="n">code</span><span class="p">)</span> <span class="k">if</span> <span class="n">checked</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">radio_buttons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">radio</span><span class="p">)</span>
+            <span class="n">item_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">radio</span><span class="p">)</span>
+
+            <span class="n">item_layout</span><span class="o">.</span><span class="n">addStretch</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">languages_layout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">item_layout</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LanguageView.change_language">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.languageview.LanguageView.change_language">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">change_language</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">language_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Troca o idioma da interface quando um radio button é selecionado.&quot;&quot;&quot;</span>
+
+        <span class="c1"># Carrega o arquivo de tradução para o idioma selecionado</span>
+        <span class="n">translation_file</span> <span class="o">=</span> <span class="n">PathConfig</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="n">language_code</span> <span class="o">+</span> <span class="s2">&quot;.qm&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">translation_file</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">translator</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">translation_file</span><span class="p">):</span>
+            <span class="n">QApplication</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">installTranslator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">translator</span><span class="p">)</span>
+
+            <span class="c1"># Atualiza os textos da interface</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_ui_texts</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="LanguageView.update_ui_texts">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.languageview.LanguageView.update_ui_texts">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_ui_texts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Atualiza os textos da interface com o idioma atual.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="n">TTeaApp</span><span class="o">.</span><span class="n">get_title</span><span class="p">()))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instruction_label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Selecione o idioma da aplicação:&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">confirm_button</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Confirmar&quot;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="LanguageView.show_warning">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.languageview.LanguageView.show_warning">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">show_warning</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Exibe uma mensagem de aviso se nenhum idioma for selecionado.&quot;&quot;&quot;</span>
+        <span class="n">QMessageBox</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">TTeaApp</span><span class="o">.</span><span class="n">get_title</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="p">(</span><span class="s2">&quot;Você deve selecionar um idioma para continuar.&quot;</span><span class="p">),</span>
+            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">Ok</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LanguageView.get_checked_language">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.languageview.LanguageView.get_checked_language">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_checked_language</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retorna o código do idioma selecionado.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">radio</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio_buttons</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">radio</span><span class="o">.</span><span class="n">isChecked</span><span class="p">():</span>
+                <span class="k">return</span> <span class="n">radio</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;language_code&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025-2025, Udesc - Larva.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

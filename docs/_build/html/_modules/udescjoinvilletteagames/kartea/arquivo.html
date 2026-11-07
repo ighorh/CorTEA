@@ -1,0 +1,1037 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>udescjoinvilletteagames.kartea.arquivo &mdash; ttea 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            ttea
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">T-TEA2.0-1</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ttea</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">udescjoinvilletteagames.kartea.arquivo</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for udescjoinvilletteagames.kartea.arquivo</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteautil.pathconfig</span><span class="w"> </span><span class="kn">import</span> <span class="n">PathConfig</span>
+
+
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Funções que interagem com os arquivos csv</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">Player</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">Fase</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Nivel</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Sessao</span> <span class="o">=</span> <span class="mi">1</span>
+
+<div class="viewcode-block" id="set_Player">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_Player">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_Player</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">Player</span>
+    <span class="n">Player</span> <span class="o">=</span> <span class="n">A</span></div>
+
+
+<div class="viewcode-block" id="get_Player">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_Player">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_Player</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">Player</span>
+    <span class="k">return</span> <span class="n">Player</span></div>
+
+
+<div class="viewcode-block" id="set_Fase">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_Fase">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_Fase</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">Fase</span>
+    <span class="n">Fase</span> <span class="o">=</span> <span class="n">A</span></div>
+
+
+<div class="viewcode-block" id="get_Fase">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_Fase">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_Fase</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">Fase</span>
+    <span class="k">return</span> <span class="n">Fase</span></div>
+
+
+<div class="viewcode-block" id="set_Nivel">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_Nivel">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_Nivel</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">Nivel</span>
+    <span class="n">Nivel</span> <span class="o">=</span> <span class="n">A</span></div>
+
+
+<div class="viewcode-block" id="get_Nivel">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_Nivel">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_Nivel</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">Nivel</span>
+    <span class="k">return</span> <span class="n">Nivel</span></div>
+
+
+<div class="viewcode-block" id="set_Sessao">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_Sessao">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_Sessao</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">Sessao</span>
+    <span class="n">Sessao</span> <span class="o">=</span> <span class="n">A</span></div>
+
+
+<div class="viewcode-block" id="get_Sessao">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_Sessao">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_Sessao</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">Sessao</span>
+    <span class="k">return</span> <span class="n">Sessao</span></div>
+
+
+<span class="n">csv</span><span class="o">.</span><span class="n">register_dialect</span><span class="p">(</span>
+    <span class="s1">&#39;mydialect&#39;</span><span class="p">,</span>
+    <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">,</span>
+    <span class="n">quotechar</span> <span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">,</span>
+    <span class="n">doublequote</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">skipinitialspace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">lineterminator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">quoting</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_MINIMAL</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CadastrarJogador">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.CadastrarJogador">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">CadastrarJogador</span><span class="p">(</span><span class="n">Nome</span><span class="p">,</span> <span class="n">Nasc</span><span class="p">,</span> <span class="n">Obs</span><span class="p">):</span>
+
+
+    <span class="c1">########################################################################################################</span>
+    <span class="c1">############################################## KARTEA ##################################################</span>
+    <span class="c1">########################################################################################################</span>
+    <span class="n">Config</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;Data de Nasc.&#39;</span><span class="p">,</span> <span class="s1">&#39;Observacoes&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase Atual&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel Atual&#39;</span><span class="p">,</span> <span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Tempo de Nivel&#39;</span><span class="p">,</span> <span class="s1">&#39;Carro&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Ambiente&#39;</span><span class="p">,</span> <span class="s1">&#39;Paleta&#39;</span><span class="p">,</span> <span class="s1">&#39;Alvo&#39;</span><span class="p">,</span> <span class="s1">&#39;Obstaculo&#39;</span><span class="p">,</span> <span class="s1">&#39;Imagem Feedback Positivo&#39;</span><span class="p">,</span> <span class="s1">&#39;Imagem Feedback Neutro&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Imagem Feedback Negativo&#39;</span><span class="p">,</span> <span class="s1">&#39;Som Feedback Positivo&#39;</span><span class="p">,</span> <span class="s1">&#39;Som Feedback Neutro&#39;</span><span class="p">,</span> <span class="s1">&#39;Som Feedback Negativo&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;HUD&#39;</span><span class="p">,</span> <span class="s1">&#39;Som&#39;</span><span class="p">]</span>
+    <span class="n">Dados</span> <span class="o">=</span> <span class="p">[</span><span class="n">Nome</span><span class="p">,</span> <span class="n">Nasc</span><span class="p">,</span> <span class="n">Obs</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;120&#39;</span><span class="p">,</span> <span class="s1">&#39;carro.png&#39;</span><span class="p">,</span> <span class="s1">&#39;ambiente.png&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;alvo.png&#39;</span><span class="p">,</span> <span class="s1">&#39;obstaculo.png&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;feedPos.png&#39;</span><span class="p">,</span> <span class="s1">&#39;feedNeut.png&#39;</span> <span class="s1">&#39;feedNeg.png&#39;</span><span class="p">,</span> <span class="s1">&#39;feedPos.mp3&#39;</span><span class="p">,</span><span class="s1">&#39;feedNeut.mp3&#39;</span><span class="p">,</span> <span class="s1">&#39;feedNeg.mp3&#39;</span><span class="p">,</span>
+               <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_KarTEA_config.csv&#39;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">Config</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">Dados</span><span class="p">)</span>
+
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Data da Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Hora Inicio&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase Alcancada&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel Alcancado&#39;</span><span class="p">,</span> <span class="s1">&#39;Pontuacao Geral&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Q Movimentos&#39;</span><span class="p">,</span> <span class="s1">&#39;Q Alvos Colididos&#39;</span><span class="p">,</span> <span class="s1">&#39;Q Alvos Desviados&#39;</span><span class="p">,</span> <span class="s1">&#39;Q Obstaculos Colididos&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Q Obstaculos Desviados&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_KarTEA_sessao.csv&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Hora do Evento&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel&#39;</span><span class="p">,</span> <span class="s1">&#39;Posicao jogador&#39;</span><span class="p">,</span> <span class="s1">&#39;Posicao Evento&#39;</span><span class="p">,</span> <span class="s1">&#39;Tipo de Evento&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_KarTEA_detalhado.csv&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+
+    <span class="c1">########################################################################################################</span>
+    <span class="c1">############################################## REPETEA #################################################</span>
+    <span class="c1">########################################################################################################</span>
+    <span class="n">Config</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;Data de Nasc.&#39;</span><span class="p">,</span> <span class="s1">&#39;Observacoes&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase Atual&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel Atual&#39;</span><span class="p">,</span> <span class="s1">&#39;Tempo de Ajuda&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Tempo Total&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Tempo de Exposicao&#39;</span><span class="p">,</span> <span class="s1">&#39;Tempo Vez do Jogador&#39;</span><span class="p">,</span> <span class="s1">&#39;HUD&#39;</span><span class="p">,</span> <span class="s1">&#39;Som&#39;</span><span class="p">,</span> <span class="s1">&#39;Camera&#39;</span><span class="p">,</span> <span class="s1">&#39;Largura de Projecao&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Altura de Projecao&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Largura Tela de Controle&#39;</span><span class="p">,</span> <span class="s1">&#39;Altura Tela de Controle&#39;</span><span class="p">,</span> <span class="s1">&#39;Cores&#39;</span><span class="p">,</span> <span class="s1">&#39;Sons&#39;</span><span class="p">]</span>
+    <span class="n">Dados</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">Nome</span><span class="p">,</span> <span class="n">Nasc</span><span class="p">,</span> <span class="n">Obs</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="s1">&#39;padrao&#39;</span><span class="p">,</span> <span class="s1">&#39;padrao&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_RepeTEA_config.csv&#39;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">Config</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">Dados</span><span class="p">)</span>
+
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;Hora Inicio&#39;</span><span class="p">,</span> <span class="s1">&#39;Hora Fim&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase Alcancada&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel Alcancado&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Qt Acertos sem Ajuda&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Acertos com Ajuda&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Ajudas&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Erros&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Omissões&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_RepeTEA.csv&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;Hora&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel&#39;</span><span class="p">,</span> <span class="s1">&#39;Posicao jogador&#39;</span><span class="p">,</span> <span class="s1">&#39;Tipo de Evento&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_RepeTEA_detalhado.csv&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+
+
+    <span class="c1">########################################################################################################</span>
+    <span class="c1">############################################## VESTEA ##################################################</span>
+    <span class="c1">########################################################################################################</span>
+    <span class="n">Config</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;Data de Nasc.&#39;</span><span class="p">,</span> <span class="s1">&#39;Observacoes&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase Atual&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;Nivel Atual&#39;</span><span class="p">,</span> <span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Tempo de Ajuda&#39;</span><span class="p">,</span> <span class="s1">&#39;Tempo Total&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Tempo de Exposicao&#39;</span><span class="p">,</span> <span class="s1">&#39;Tempo Vez do Jogador&#39;</span><span class="p">,</span> <span class="s1">&#39;HUD&#39;</span><span class="p">,</span> <span class="s1">&#39;Som&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;Camera&#39;</span><span class="p">,</span> <span class="s1">&#39;Largura de Projecao&#39;</span><span class="p">,</span> <span class="s1">&#39;Altura de Projecao&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Largura Tela de Controle&#39;</span><span class="p">,</span> <span class="s1">&#39;Altura Tela de Controle&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;Cores&#39;</span><span class="p">,</span> <span class="s1">&#39;Sons&#39;</span><span class="p">,</span> <span class="s1">&#39;Cor do ponto&#39;</span><span class="p">,</span> <span class="s1">&#39;Imagem do ponto&#39;</span><span class="p">,</span> <span class="s1">&#39;Parte do corpo&#39;</span><span class="p">]</span>
+    <span class="n">Dados</span> <span class="o">=</span> <span class="p">[</span><span class="n">Nome</span><span class="p">,</span> <span class="n">Nasc</span><span class="p">,</span> <span class="n">Obs</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="s1">&#39;padrao&#39;</span><span class="p">,</span> <span class="s1">&#39;padrao&#39;</span><span class="p">,</span> <span class="s1">&#39;(255,255,0)&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Meio dos pes&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_VesTEA_config.csv&#39;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">Config</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">Dados</span><span class="p">)</span>
+
+    <span class="n">sessao</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;Hora Inicio&#39;</span><span class="p">,</span> <span class="s1">&#39;Hora Fim&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase Alcancada&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel Alcancado&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Qt Acertos sem Ajuda&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Erros&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Acertos com Ajuda&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Ajudas&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Omissoes&#39;</span><span class="p">,</span> <span class="s1">&#39;Qt Colisoes&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_VesTEA_sessao.csv&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">sessao</span><span class="p">)</span>
+
+    <span class="n">detalhado</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sessao&#39;</span><span class="p">,</span> <span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;Hora&#39;</span><span class="p">,</span> <span class="s1">&#39;Fase&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel&#39;</span><span class="p">,</span> <span class="s1">&#39;Posicao jogador&#39;</span><span class="p">,</span> <span class="s1">&#39;Tipo de Evento&#39;</span><span class="p">,</span> <span class="s1">&#39;Obs.&#39;</span><span class="p">]</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">Nome</span> <span class="o">+</span> <span class="s1">&#39;_VesTEA_detalhado.csv&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">detalhado</span><span class="p">)</span></div>
+
+<span class="c1">#----------------------------------------------------------------------------------------------------------------------#</span>
+
+<div class="viewcode-block" id="get_Date">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_Date">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_Date</span><span class="p">():</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">date</span></div>
+
+
+<div class="viewcode-block" id="gravaDados">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.gravaDados">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gravaDados</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">Dados</span><span class="p">):</span><span class="c1"># Dados é um vetor com os dados para gravar no arquivo &#39;filename&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">Dados</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="gravaArrayDados">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.gravaArrayDados">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gravaArrayDados</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">Dados</span><span class="p">):</span><span class="c1"># Dados é um vetor com os dados para gravar no arquivo &#39;filename&#39;</span>
+    <span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">Dados</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+            <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+            <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">linha</span><span class="p">)</span>        </div>
+
+
+<div class="viewcode-block" id="grava_Sessao">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.grava_Sessao">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">grava_Sessao</span><span class="p">(</span><span class="n">jogador</span><span class="p">,</span> <span class="n">fase</span><span class="p">,</span> <span class="n">nivel</span><span class="p">,</span> <span class="n">pont</span><span class="p">,</span> <span class="n">mov</span><span class="p">,</span> <span class="n">alvos_c</span><span class="p">,</span> <span class="n">alvos_d</span><span class="p">,</span> <span class="n">obst_c</span><span class="p">,</span> <span class="n">obst_d</span><span class="p">):</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span><span class="o">+</span><span class="n">jogador</span><span class="o">+</span><span class="s1">&#39;_KarTEA_sessao.csv&#39;</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_Date</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%x</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">hora</span> <span class="o">=</span> <span class="n">get_Date</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%X</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">hora</span><span class="p">,</span> <span class="n">fase</span><span class="p">,</span> <span class="n">nivel</span><span class="p">,</span> <span class="n">pont</span><span class="p">,</span> <span class="n">mov</span><span class="p">,</span> <span class="n">alvos_c</span><span class="p">,</span> <span class="n">alvos_d</span><span class="p">,</span> <span class="n">obst_c</span><span class="p">,</span> <span class="n">obst_d</span><span class="p">]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="s1">&#39;a+&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+    <span class="n">set_Sessao</span><span class="p">(</span><span class="nb">id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="grava_Detalhado">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.grava_Detalhado">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">grava_Detalhado</span><span class="p">(</span><span class="n">jogador</span><span class="p">,</span> <span class="n">sessao</span><span class="p">,</span> <span class="n">fase</span><span class="p">,</span> <span class="n">nivel</span><span class="p">,</span> <span class="n">pos_jog</span><span class="p">,</span> <span class="n">pos_ev</span><span class="p">,</span> <span class="n">tipo</span><span class="p">):</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;Jogadores/&#39;</span> <span class="o">+</span> <span class="n">jogador</span> <span class="o">+</span> <span class="s1">&#39;_KarTEA_detalhado.csv&#39;</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="n">hora</span> <span class="o">=</span> <span class="n">get_Date</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%X</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="nb">id</span><span class="p">,</span> <span class="n">sessao</span><span class="p">,</span> <span class="n">hora</span><span class="p">,</span> <span class="n">fase</span><span class="p">,</span> <span class="n">nivel</span><span class="p">,</span> <span class="n">pos_jog</span><span class="p">,</span> <span class="n">pos_ev</span><span class="p">,</span> <span class="n">tipo</span><span class="p">]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvwriter</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">csvwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span></div>
+
+
+
+<span class="c1">#----------------------------------------------------------------------------------------------------------------------#</span>
+
+<div class="viewcode-block" id="lerConfigs">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.lerConfigs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lerConfigs</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span> <span class="c1">#Apenas para os arquivos gerais, nos detalhados retorna a primeira linha de dados</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Player_Kartea_config.csv = [&#39;Nome&#39;, &#39;Data de Nasc.&#39;, &#39;Observacoes&#39;, &#39;Fase Atual&#39;, &#39;Nivel Atual&#39;, &#39;Sessao&#39;, &#39;Tempo de Nivel&#39;, &#39;Carro&#39;,</span>
+<span class="sd">                              &#39;Ambiente&#39;, &#39;Paleta&#39;, &#39;Alvo&#39;, &#39;Obstaculo&#39;, &#39;Imagem Feedback Positivo&#39;, &#39;Imagem Feedback Neutro&#39;,</span>
+<span class="sd">                              &#39;Imagem Feedback Negativo&#39;, &#39;Som Feedback Positivo&#39;, &#39;Som Feedback Neutro&#39;, &#39;Som Feedback Negativo&#39;,</span>
+<span class="sd">                              &#39;HUD&#39;, &#39;Som&#39;]</span>
+
+<span class="sd">    Player_Kartea.csv = [&#39;Sessao&#39;, &#39;Data da Sessao&#39;, &#39;Hora Inicio&#39;, &#39;Fase Alcancada&#39;, &#39;Nivel Alcancado&#39;, &#39;Pontuacao Geral&#39;, </span>
+<span class="sd">                         &#39;Q Movimentos&#39;, &#39;Q Alvos Colididos&#39;, &#39;Q Alvos Desviados&#39;, &#39;Q Obstaculos Colididos&#39;, </span>
+<span class="sd">                         &#39;Q Obstaculos Desviados&#39;]</span>
+
+<span class="sd">    Player_Kartea_detalhado = [&#39;ID&#39;, &#39;Sessao&#39;, &#39;Hora do Evento&#39;, &#39;Fase&#39;, &#39;Nivel&#39;, &#39;Posicao jogador&#39;, &#39;Posicao Evento&#39;, &#39;Tipo de Evento&#39;]</span>
+
+<span class="sd">    Fases = [&#39;&#39;, ]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">csvreader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s1">&#39;mydialect&#39;</span><span class="p">)</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">csvreader</span><span class="p">)</span>  <span class="c1"># Dados do jogador</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">csvreader</span><span class="p">)</span>  <span class="c1"># Configuracoes</span>
+        <span class="n">set_Player</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">set_Fase</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">set_Nivel</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+        <span class="n">set_Sessao</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">fields</span></div>
+
+
+<span class="c1">#Le os pontos de calibração realizados antes do jogo</span>
+<div class="viewcode-block" id="lerCalibracao">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.lerCalibracao">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lerCalibracao</span><span class="p">():</span>
+    <span class="n">pontos_calibracao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;calibracao.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">pontos_calibracao</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ponto 1 x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pontos_calibracao</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ponto 1 y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pontos_calibracao</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ponto 2 x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pontos_calibracao</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ponto 2 y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pontos_calibracao</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ponto 3 x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pontos_calibracao</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ponto 3 y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pontos_calibracao</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ponto 4 x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pontos_calibracao</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ponto 4 y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">pontos_calibracao</span></div>
+
+
+
+<span class="c1">#----------------------------------------------------------------------------------------------------------------------#</span>
+
+<span class="c1">#Manipulação de dados das Configs</span>
+<div class="viewcode-block" id="get_K_NOME">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_NOME">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_NOME</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Nome&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="set_K_NOME">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_NOME">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_NOME</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Nome&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_NASC">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_NASC">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_NASC</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Data de Nasc.&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="set_K_NASC">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_NASC">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_NASC</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Data de Nasc.&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_OBS">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_OBS">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_OBS</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Observacoes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="set_K_OBS">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_OBS">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_OBS</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Observacoes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_FASE">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_FASE">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_FASE</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Fase Atual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="set_K_FASE">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_FASE">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_FASE</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Fase Atual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+    
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1">#print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_NIVEL">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_NIVEL">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_NIVEL</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Nivel Atual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="set_K_NIVEL">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_NIVEL">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_NIVEL</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Nivel Atual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_TEMPO_NIVEL">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_TEMPO_NIVEL">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_TEMPO_NIVEL</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tempo de Nivel&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_TEMPO_NIVEL">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_TEMPO_NIVEL">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_TEMPO_NIVEL</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Tempo de Nivel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_CARRO">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_CARRO">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_CARRO</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Carro&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_CARRO">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_CARRO">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_CARRO</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Carro&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_AMBIENTE">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_AMBIENTE">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_AMBIENTE</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ambiente&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_AMBIENTE">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_AMBIENTE">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_AMBIENTE</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Ambiente&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_PALETA">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_PALETA">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_PALETA</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Paleta&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_PALETA">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_PALETA">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_PALETA</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Paleta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_ALVO">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_ALVO">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_ALVO</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Alvo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_ALVO">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_ALVO">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_ALVO</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Alvo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_OBSTACULO">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_OBSTACULO">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_OBSTACULO</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Obstaculo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_OBSTACULO">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_OBSTACULO">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_OBSTACULO</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Obstaculo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_IMG_FEED_POS">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_IMG_FEED_POS">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_IMG_FEED_POS</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Imagem Feedback Positivo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_IMG_FEED_POS">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_IMG_FEED_POS">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_IMG_FEED_POS</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Imagem Feedback Positivo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_IMG_FEED_NEU">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_IMG_FEED_NEU">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_IMG_FEED_NEU</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Imagem Feedback Neutro&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_IMG_FEED_NEU">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_IMG_FEED_NEU">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_IMG_FEED_NEU</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Imagem Feedback Neutro&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_IMG_FEED_NEG">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_IMG_FEED_NEG">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_IMG_FEED_NEG</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Imagem Feedback Negativo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_IMG_FEED_NEG">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_IMG_FEED_NEG">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_IMG_FEED_NEG</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Imagem Feedback Negativo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_SOM_FEED_POS">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_SOM_FEED_POS">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_SOM_FEED_POS</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Som Feedback Positivo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_SOM_FEED_POS">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_SOM_FEED_POS">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_SOM_FEED_POS</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Som Feedback Positivo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_SOM_FEED_NEU">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_SOM_FEED_NEU">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_SOM_FEED_NEU</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Som Feedback Neutro&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_SOM_FEED_NEU">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_SOM_FEED_NEU">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_SOM_FEED_NEU</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Som Feedback Neutro&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_SOM_FEED_NEG">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_SOM_FEED_NEG">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_SOM_FEED_NEG</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Som Feedback Negativo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span>    </div>
+
+
+<div class="viewcode-block" id="set_K_SOM_FEED_NEG">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_SOM_FEED_NEG">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_SOM_FEED_NEG</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Som Feedback Negativo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_HUD">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_HUD">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_HUD</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;HUD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="set_K_HUD">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_HUD">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_HUD</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;HUD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_K_SOM">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_K_SOM">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_K_SOM</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Som&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+<div class="viewcode-block" id="set_K_SOM">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_K_SOM">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_K_SOM</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Som&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+<span class="c1">############################################################################################################</span>
+<span class="c1">################################################ REPETEA ###################################################</span>
+<span class="c1">############################################################################################################</span>
+<div class="viewcode-block" id="get_R_SESSAO">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_R_SESSAO">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_R_SESSAO</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Sessao&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+
+<div class="viewcode-block" id="set_R_SESSAO">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_R_SESSAO">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_R_SESSAO</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Sessao&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+
+<div class="viewcode-block" id="get_R_FASE">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_R_FASE">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_R_FASE</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Fase Atual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+
+<div class="viewcode-block" id="set_R_FASE">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_R_FASE">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_R_FASE</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Fase Atual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+<div class="viewcode-block" id="set_R_FASE_detalhado">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_R_FASE_detalhado">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_R_FASE_detalhado</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Fase&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+
+<div class="viewcode-block" id="get_R_NIVEL">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_R_NIVEL">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_R_NIVEL</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Nivel Atual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+
+<div class="viewcode-block" id="set_R_NIVEL">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_R_NIVEL">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_R_NIVEL</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Nivel Atual&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+<div class="viewcode-block" id="get_R_HUD">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_R_HUD">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_R_HUD</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;HUD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+
+<div class="viewcode-block" id="set_R_HUD">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_R_HUD">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_R_HUD</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;HUD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+
+<div class="viewcode-block" id="get_R_SOM">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.get_R_SOM">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_R_SOM</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># getting value/data</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Som&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+
+<div class="viewcode-block" id="set_R_SOM">
+<a class="viewcode-back" href="../../../udescjoinvilletteagames.kartea.html#udescjoinvilletteagames.kartea.arquivo.set_R_SOM">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_R_SOM</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># reading the csv file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># updating the column value/data</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Som&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="c1"># writing into the file</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+    <span class="c1"># print(df)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025-2025, Udesc - Larva.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

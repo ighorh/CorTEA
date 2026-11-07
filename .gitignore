@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Runtime-generated user data
+data/calibration/
+data/config/
+data/exports/
+data/institutionfacilities/
+data/log/
+data/players/
+data/professionals/
+
+# Tests and analysis
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Build output
+build/
+dist/
+
+# Local system and IDE files
+.DS_Store
+.idea/
+.vscode/

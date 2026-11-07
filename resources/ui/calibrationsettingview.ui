@@ -1,0 +1,2349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CalibrationSettingView</class>
+ <widget class="QDialog" name="CalibrationSettingView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>624</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Configuração de Calibração</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="main_layout">
+   <item>
+    <widget class="QTabWidget" name="tab_widget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_mediapipe">
+      <attribute name="title">
+       <string>MediaPipe</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="lay_mediapipe">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>12</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>12</number>
+       </property>
+       <item>
+        <layout class="QFormLayout" name="frm_mediapipe">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::FieldGrowthPolicy::FieldsStayAtSizeHint</enum>
+         </property>
+         <property name="labelAlignment">
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbl_model_desktop">
+           <property name="text">
+            <string>Modelo MediaPipe Desktop:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QGroupBox" name="grp_model_desktop">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_desktop">
+            <item>
+             <widget class="QRadioButton" name="rb_model_desktop_lite">
+              <property name="text">
+               <string>Lite</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_model_desktop</string>
+              </property>
+              <property name="dataclass_property_value" stdset="0">
+               <string notr="true">pose_landmarker_lite.task</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_model_desktop_full">
+              <property name="text">
+               <string>Full</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_model_desktop</string>
+              </property>
+              <property name="dataclass_property_value" stdset="0">
+               <string notr="true">pose_landmarker_full.task</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_model_desktop_heavy">
+              <property name="text">
+               <string>Heavy</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_model_desktop</string>
+              </property>
+              <property name="dataclass_property_value" stdset="0">
+               <string notr="true">pose_landmarker_heavy.task</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_model_desktop">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lbl_model_embedded">
+           <property name="text">
+            <string>Modelo MediaPipe Embarcado:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QGroupBox" name="grp_model_embedded">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_embedded">
+            <item>
+             <widget class="QRadioButton" name="rb_model_embedded_lite">
+              <property name="text">
+               <string>Lite</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_model_embedded</string>
+              </property>
+              <property name="dataclass_property_value" stdset="0">
+               <string notr="true">pose_landmarker_lite.task</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_model_embedded_full">
+              <property name="text">
+               <string>Full</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_model_embedded</string>
+              </property>
+              <property name="dataclass_property_value" stdset="0">
+               <string notr="true">pose_landmarker_full.task</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_model_embedded_heavy">
+              <property name="text">
+               <string>Heavy</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_model_embedded</string>
+              </property>
+              <property name="dataclass_property_value" stdset="0">
+               <string notr="true">pose_landmarker_heavy.task</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_model_embedded">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lbl_embedded_processing">
+           <property name="text">
+            <string>Embarcado Processamento:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QGroupBox" name="grp_embedded_processing">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_embedded_proc">
+            <item>
+             <widget class="QRadioButton" name="rb_embedded_processing_cpu">
+              <property name="text">
+               <string>CPU</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_embedded_processing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_embedded_processing_gpu">
+              <property name="text">
+               <string>GPU</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_embedded_processing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_embedded_processing">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lbl_linux_processing">
+           <property name="text">
+            <string>Linux Processamento:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QGroupBox" name="grp_linux_processing">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_linux">
+            <item>
+             <widget class="QRadioButton" name="rb_linux_processing_cpu">
+              <property name="text">
+               <string>CPU</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_linux_processing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_linux_processing_gpu">
+              <property name="text">
+               <string>GPU</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_linux_processing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_linux_processing">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lbl_mac_processing">
+           <property name="text">
+            <string>Mac Processamento:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QGroupBox" name="groupBox_mac">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_mac">
+            <item>
+             <widget class="QRadioButton" name="rb_mac_processing_cpu">
+              <property name="text">
+               <string>CPU</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_mac_processing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_mac_processing_gpu">
+              <property name="text">
+               <string>GPU</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_mac_processing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_mac_processing">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lbl_windows_processing">
+           <property name="text">
+            <string>Windows Processamento:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QGroupBox" name="groupBox_windows">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_windows">
+            <item>
+             <widget class="QRadioButton" name="rb_windows_processing_cpu">
+              <property name="text">
+               <string>CPU</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_windows_processing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_windows_processing_gpu">
+              <property name="text">
+               <string>GPU</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_windows_processing</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_windows_processing">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="lbl_execution_mode">
+           <property name="text">
+            <string>Modo de Execução:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QGroupBox" name="groupBox_execution_mode">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_execution_mode">
+            <item>
+             <widget class="QRadioButton" name="rb_execution_mode_video">
+              <property name="text">
+               <string>Vídeo</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">mediapipe_execution_mode</string>
+              </property>
+              <property name="dataclass_property_value" stdset="0">
+               <string notr="true">vision.RunningMode.VIDEO</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_execution_mode">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="lbl_enable_mediapipe_pose">
+           <property name="text">
+            <string>Habilitar MediaPipe Pose?</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QCheckBox" name="chk_enable_mediapipe_pose">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">mediapipe_enable_mediapipe_pose</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="lbl_detection_position">
+           <property name="text">
+            <string>Detecção de Posição (0–1):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QDoubleSpinBox" name="spn_detection_position">
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="minimum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.500000000000000</double>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">mediapipe_detection_position</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="lbl_detection_presence">
+           <property name="text">
+            <string>Detecção de Presença (0–1):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="QDoubleSpinBox" name="spn_detection_presence">
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="minimum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.500000000000000</double>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">mediapipe_detection_presence</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLabel" name="lbl_detection_tracking">
+           <property name="text">
+            <string>Detecção de Rastreio (0–1):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="1">
+          <widget class="QDoubleSpinBox" name="spn_detection_tracking">
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="minimum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.500000000000000</double>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">mediapipe_detection_tracking</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLabel" name="lbl_num_position">
+           <property name="text">
+            <string>Número de posições:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="1">
+          <widget class="QSpinBox" name="spn_num_position">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">mediapipe_num_position</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="vs_mediapipe">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_opencv">
+      <attribute name="title">
+       <string>OpenCV</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="lay_opencv">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>12</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>12</number>
+       </property>
+       <item>
+        <layout class="QFormLayout" name="frm_opencv">
+         <property name="labelAlignment">
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbl_embedded_capture">
+           <property name="text">
+            <string>Embarcado Captura de Vídeo:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QGroupBox" name="grp_embedded_capture">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout">
+            <item>
+             <widget class="QRadioButton" name="rb_embedded_v4l2">
+              <property name="text">
+               <string>CAP_V4L2</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">opencv_embedded_capture</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_embedded_gstreamer">
+              <property name="text">
+               <string>CAP_GSTREAMER</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">opencv_embedded_capture</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_embedded_capture">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lbl_linux_capture">
+           <property name="text">
+            <string>Linux Captura de Vídeo:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QGroupBox" name="grp_linux_capture">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout">
+            <item>
+             <widget class="QRadioButton" name="rb_linux_v4l2">
+              <property name="text">
+               <string>CAP_V4L2</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">opencv_linux_capture</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_linux_gstreamer">
+              <property name="text">
+               <string>CAP_GSTREAMER</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">opencv_linux_capture</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_linux_capture">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lbl_mac_capture">
+           <property name="text">
+            <string>Mac Captura de Vídeo:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QGroupBox" name="grp_mac_capture">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout">
+            <item>
+             <widget class="QRadioButton" name="rb_mac_avfoundation">
+              <property name="text">
+               <string>CAP_AVFOUNDATION</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">opencv_mac_capture</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_mac_any">
+              <property name="text">
+               <string>CAP_ANY</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">opencv_mac_capture</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_mac_capture">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lbl_windows_capture">
+           <property name="text">
+            <string>Windows Captura de Vídeo:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QGroupBox" name="grp_windows_capture">
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QHBoxLayout">
+            <item>
+             <widget class="QRadioButton" name="rb_windows_dshow">
+              <property name="text">
+               <string>CAP_DSHOW</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">opencv_windows_capture</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_windows_msmf">
+              <property name="text">
+               <string>CAP_MSMF</string>
+              </property>
+              <property name="dataclass_property" stdset="0">
+               <string notr="true">opencv_windows_capture</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="hs_windows_capture">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lbl_buffer_size">
+           <property name="text">
+            <string>Tamanho do Buffer:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="spn_buffer_size">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>5</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">opencv_buffer_size</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lbl_custom_camera">
+           <property name="text">
+            <string>Customizar Informações Câmera?</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QCheckBox" name="chk_custom_camera">
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">opencv_custom_camera</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="grp_camera_info">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="title">
+          <string>Informações da Câmera</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <layout class="QFormLayout" name="form_camera">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_ratio">
+            <property name="text">
+             <string>Proporção:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="cbx_ratio">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="editable">
+             <bool>false</bool>
+            </property>
+            <property name="maxVisibleItems">
+             <number>5</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">opencv_ratio</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbl_width">
+            <property name="text">
+             <string>Largura:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spn_camera_width">
+            <property name="minimum">
+             <number>640</number>
+            </property>
+            <property name="maximum">
+             <number>1920</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>640</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">opencv_width</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_height">
+            <property name="text">
+             <string>Altura:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="spn_camera_height">
+            <property name="minimum">
+             <number>480</number>
+            </property>
+            <property name="maximum">
+             <number>1080</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>480</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">opencv_height</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_fps">
+            <property name="text">
+             <string>FPS:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QGroupBox" name="grp_fps">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QHBoxLayout">
+             <item>
+              <widget class="QRadioButton" name="rb_fps_30">
+               <property name="text">
+                <string>30</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">opencv_fps</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_fps_60">
+               <property name="text">
+                <string>60</string>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">opencv_fps</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="hs_fps">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="vs_opencv">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_filter">
+      <attribute name="title">
+       <string>Filtros</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="lay_filter">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>12</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>12</number>
+       </property>
+       <item>
+        <layout class="QFormLayout" name="frm_filter">
+         <property name="labelAlignment">
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbl_use_filter">
+           <property name="text">
+            <string>Usar Filtros?</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="chk_enable_filter">
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">filter_enable_filter</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="grp_filter">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="title">
+          <string>Configurações de Filtros</string>
+         </property>
+         <layout class="QFormLayout" name="form_filters">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_average_smooth_frames">
+            <property name="text">
+             <string>Média Móvel Smooth Frames:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spn_average_smooth_frames">
+            <property name="minimum">
+             <number>5</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>5</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">filter_average_smooth_frames</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbl_clahe_clip">
+            <property name="text">
+             <string>Filtro Clahe Limite Clip:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spn_clahe_clip">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>2</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">filter_clahe_clip</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_clahe_grid">
+            <property name="text">
+             <string>Filtro Clahe Tamanho Grid:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="cbx_clahe_grid">
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">filter_clahe_grid</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>4:4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>8:8</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>16:16</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>32:32</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_clahe_lum_below">
+            <property name="text">
+             <string>Filtro Clahe Aplicar Quando Valor de Luminosidade Abaixo de:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="spn_clahe_lum_below">
+            <property name="minimum">
+             <number>50</number>
+            </property>
+            <property name="maximum">
+             <number>150</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">filter_clahe_lum_below</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lbl_gamma_factor">
+            <property name="text">
+             <string>Filtro Gamma Fator de Divisão:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QDoubleSpinBox" name="spn_gamma_factor">
+            <property name="decimals">
+             <number>1</number>
+            </property>
+            <property name="minimum">
+             <double>1.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>10.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.100000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.200000000000000</double>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">filter_gamma_factor</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lbl_gamma_lum_above">
+            <property name="text">
+             <string>Filtro Gamma Aplicar Quando Valor de Luminosidade Acima de:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QSpinBox" name="spn_gamma_lum_above">
+            <property name="minimum">
+             <number>100</number>
+            </property>
+            <property name="maximum">
+             <number>200</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>150</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">filter_gamma_lum_above</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="lbl_landmark_limit">
+            <property name="text">
+             <string>Filtro Landmark Limite de Movimento:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QDoubleSpinBox" name="spn_landmark_limit">
+            <property name="decimals">
+             <number>2</number>
+            </property>
+            <property name="minimum">
+             <double>0.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>1.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.010000000000000</double>
+            </property>
+            <property name="value">
+             <double>0.150000000000000</double>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">filter_landmark_limit</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="vs_filter">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_telemetry">
+      <attribute name="title">
+       <string>Telemetria</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="lay_telemetry">
+       <item>
+        <layout class="QFormLayout" name="frm_telemetry">
+         <property name="labelAlignment">
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbl_enable_telemetry_panel">
+           <property name="text">
+            <string>Habilitar painel telemetria?</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="chk_habilitar_painel_telemetria">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="dataclass_property" stdset="0">
+            <string notr="true">telemetry_enable_telemetry_panel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="vs_telemetry">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_automatic_calibration">
+      <attribute name="title">
+       <string>Calibração Automática</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="lay_calibracao_automatica">
+       <item>
+        <widget class="QGroupBox" name="grp_window_automatic">
+         <property name="title">
+          <string>Janela de Calibração</string>
+         </property>
+         <layout class="QFormLayout" name="frm_janela_automatic">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_window_position_automatic">
+            <property name="text">
+             <string>Posição da abertura:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="grp_window_position_automatic">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_window_position_automatic">
+             <item>
+              <widget class="QRadioButton" name="rb_top_left_automatic">
+               <property name="text">
+                <string>Topo-Esquerda</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">automatic_window_position_automatic</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">topLeft</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="hs_window_position_automatic">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbl_window_open_automatic">
+            <property name="text">
+             <string>Modo de abertura:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QGroupBox" name="grp_window_open_automatic">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_abertura_janela_automatica">
+             <item>
+              <widget class="QRadioButton" name="rb_window_full_screen_automatic">
+               <property name="text">
+                <string>Tela Cheia</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">automatic_window_open_automatic</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_window_maximized_screen_automatic">
+               <property name="text">
+                <string>Modo Janela (Maximizada)</string>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">automatic_window_open_automatic</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_window_maximized_screen_util_automatic">
+               <property name="text">
+                <string>Modo Janela (Maximizada Área Útil)</string>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">automatic_window_open_automatic</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="hs_window_open_automatic">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_open_projector_automatic">
+            <property name="text">
+             <string>Abrir diretamente no projetor?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QCheckBox" name="chk_open_projector_automatic">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_open_projector_automatic</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_default_calibration_automatic">
+            <property name="text">
+             <string>Calibração padrão?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QCheckBox" name="chk_default_calibration_automatic">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_default_calibration_automatic</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="grp_calibration_points_automatic">
+         <property name="title">
+          <string>Leitura Pontos de Calibração</string>
+         </property>
+         <layout class="QFormLayout" name="frm_pontos_calibracao_automatic">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_mirror_mode_automatic">
+            <property name="text">
+             <string>Modo espelho?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="chk_mirror_mode_automatic">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_mirror_mode_automatic</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="grp_automatic_marker">
+         <property name="title">
+          <string>Marcador</string>
+         </property>
+         <layout class="QFormLayout" name="frm_marcador_automatic">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_num_columns_automatic">
+            <property name="text">
+             <string>Quantidade de colunas:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="spn_num_columns_automatic">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>50</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>6</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_num_columns_automatic</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbl_num_rows_automatic">
+            <property name="text">
+             <string>Quantidade de linhas:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spn_num_rows_automatic">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>50</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>4</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_num_rows_automatic</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_multiplier_automatic">
+            <property name="text">
+             <string>Multiplicador:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QDoubleSpinBox" name="spn_multiplier_automatic">
+            <property name="decimals">
+             <number>2</number>
+            </property>
+            <property name="minimum">
+             <double>0.010000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>1.000000000000000</double>
+            </property>
+            <property name="singleStep">
+             <double>0.010000000000000</double>
+            </property>
+            <property name="value">
+             <double>0.750000000000000</double>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_multiplier_automatic</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_dictionary_automatic">
+            <property name="text">
+             <string>Dicionário:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="cbx_dictionary_automatic">
+            <property name="currentIndex">
+             <number>2</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_dictionary_automatic</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>DICT_4X4_50</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_4X4_100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_4X4_250</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_4X4_1000</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_5X5_50</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_5X5_100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_5X5_250</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_5X5_1000</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_6X6_50</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_6X6_100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_6X6_250</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_6X6_1000</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_7X7_50</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_7X7_100</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_7X7_250</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DICT_7X7_1000</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lbl_width_automatic">
+            <property name="text">
+             <string>Largura em pixels:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="spn_width_automatic">
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>150</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_width_automatic</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lbl_height_automatic">
+            <property name="text">
+             <string>Altura em pixels:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QSpinBox" name="spn_height_automatic">
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>150</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_height_automatic</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="lbl_margin_automatic">
+            <property name="text">
+             <string>Tamanho da margem em pixels:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QSpinBox" name="spn_margin_automatic">
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">automatic_margin_automatic</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="vs_calibration_automatic">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_semiautomatic_calibration">
+      <attribute name="title">
+       <string>Calibração Semi-Automática</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="lay_calibracao_semi_automatica">
+       <item>
+        <widget class="QGroupBox" name="grp_window_semiautomatic">
+         <property name="title">
+          <string>Janela de Calibração</string>
+         </property>
+         <layout class="QFormLayout" name="frm_janela_semiautomatic">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_window_position_semiautomatic">
+            <property name="text">
+             <string>Posição da abertura:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="grp_window_position_semiautomatic">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_window_position_semiautomatic">
+             <item>
+              <widget class="QRadioButton" name="rb_top_left_semiautomatic">
+               <property name="text">
+                <string>Topo-Esquerda</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">semiautomatic_window_position_semiautomatic</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">topLeft</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="hs_window_position_semiautomatic">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbl_window_open_semiautomatic">
+            <property name="text">
+             <string>Modo de abertura:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QGroupBox" name="grp_window_open_semiautomatic">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_abertura_janela_semi_automatica">
+             <item>
+              <widget class="QRadioButton" name="rb_window_full_screen_semiautomatic">
+               <property name="text">
+                <string>Tela Cheia</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">semiautomatic_window_open_semiautomatic</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_window_maximized_screen_semiautomatic">
+               <property name="text">
+                <string>Modo Janela (Maximizada)</string>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">semiautomatic_window_open_semiautomatic</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_window_maximized_screen_util_semiautomatic">
+               <property name="text">
+                <string>Modo Janela (Maximizada Área Útil)</string>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">semiautomatic_window_open_semiautomatic</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="hs_window_open_semiautomatic">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_open_projector_semiautomatic">
+            <property name="text">
+             <string>Abrir diretamente no projetor?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QCheckBox" name="chk_open_projector_semiautomatic">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">semiautomatic_open_projector_semiautomatic</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_default_calibration_semiautomatic">
+            <property name="text">
+             <string>Calibração padrão?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QCheckBox" name="chk_default_calibration_semiautomatic">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">semiautomatic_default_calibration_semiautomatic</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="grp_calibration_points_semiautomatic">
+         <property name="title">
+          <string>Leitura Pontos de Calibração</string>
+         </property>
+         <layout class="QFormLayout" name="frm_pontos_calibracao_semiautomatic">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_mirror_mode_semiautomatic">
+            <property name="text">
+             <string>Modo espelho?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="chk_mirror_mode_semiautomatic">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">semiautomatic_mirror_mode_semiautomatic</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="vs_calibration_semiautomatic">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_manual_calibration">
+      <attribute name="title">
+       <string>Calibração Manual</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="lay_calibracao_manual">
+       <item>
+        <widget class="QGroupBox" name="grp_window_manual">
+         <property name="title">
+          <string>Janela de Calibração</string>
+         </property>
+         <layout class="QFormLayout" name="frm_janela_manual">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_window_position_manual">
+            <property name="text">
+             <string>Posição da abertura:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="grp_window_position_manual">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_window_position_manual">
+             <item>
+              <widget class="QRadioButton" name="rb_top_left_manual">
+               <property name="text">
+                <string>Topo-Esquerda</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">manual_window_position_manual</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">topLeft</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="hs_window_position_manual">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbl_window_open_manual">
+            <property name="text">
+             <string>Modo de abertura:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QGroupBox" name="grp_window_open_manual">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_abertura_janela_manual">
+             <item>
+              <widget class="QRadioButton" name="rb_window_full_screen_manual">
+               <property name="text">
+                <string>Tela Cheia</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">manual_window_open_manual</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_window_maximized_screen_manual">
+               <property name="text">
+                <string>Modo Janela (Maximizada)</string>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">manual_window_open_manual</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_window_maximized_screen_util_manual">
+               <property name="text">
+                <string>Modo Janela (Maximizada Área Útil)</string>
+               </property>
+               <property name="dataclass_property" stdset="0">
+                <string notr="true">manual_window_open_manual</string>
+               </property>
+               <property name="dataclass_property_value" stdset="0">
+                <string notr="true">3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="hs_window_open_manual">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_open_projector_manual">
+            <property name="text">
+             <string>Abrir diretamente no projetor?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QCheckBox" name="chk_open_projector_manual">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">manual_open_projector_manual</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_default_calibration_manual">
+            <property name="text">
+             <string>Calibração padrão?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QCheckBox" name="chk_default_calibration_manual">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">manual_default_calibration_manual</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="grp_calibration_points_manual">
+         <property name="title">
+          <string>Leitura Pontos de Calibração</string>
+         </property>
+         <layout class="QFormLayout" name="frm_pontos_calibracao_manual">
+          <property name="labelAlignment">
+           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_mirror_mode_manual">
+            <property name="text">
+             <string>Modo espelho?</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="chk_mirror_mode_manual">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="dataclass_property" stdset="0">
+             <string notr="true">manual_mirror_mode_manual</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="vs_calibration_manual">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="lay_button">
+     <item>
+      <spacer name="hs_button">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_ok">
+       <property name="toolTip">
+        <string>Gravar operação corrente</string>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resources.qrc">
+         <normaloff>:/icons/ui/buttons/okicon</normaloff>:/icons/ui/buttons/okicon</iconset>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_cancel">
+       <property name="toolTip">
+        <string>Cancelar operação corrente</string>
+       </property>
+       <property name="text">
+        <string>Cancelar</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resources.qrc">
+         <normaloff>:/icons/ui/buttons/cancelicon</normaloff>:/icons/ui/buttons/cancelicon</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

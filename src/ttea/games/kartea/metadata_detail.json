@@ -1,0 +1,185 @@
+{
+  "app_id": 2,
+  "assets": {
+    "background_image": "",
+    "header_image": "",
+    "icon": "resources/icons/kartea4.ico",
+    "logo": ""
+  },
+  "categories": [
+    {
+      "description": "Single-player",
+      "id": "single_player"
+    }
+  ],
+  "content_descriptors": {
+    "ids": [],
+    "notes": "Educational game focused on sensory processing development. Suitable for all ages, including children with special needs."
+  },
+  "developer": {
+    "authors": [
+      "Alexandre Altair de Melo",
+      "Gabriel Brunelli Pereira"
+    ],
+    "company": "Larva - UDESC - CCT - Joinville",
+    "contact_email": "",
+    "website": "https://udescmove2learn.wordpress.com/"
+  },
+  "exec_launch": "kartea.py",
+  "game_title": "KarTEA",
+  "is_free": true,
+  "localization": {
+    "default_language": "en_US",
+    "display_data": {
+      "en_US": {
+        "about_the_game": "Developed to help children and individuals with sensory processing challenges through engaging gameplay. Built with Python and Pygame for cross-platform accessibility.",
+        "content_notes": "Educational game focused on the development of sensory processing. Suitable for all ages, including children with special needs.",
+        "detailed_description": "KarTEA is an educational racing game designed to support the development of sensory processing skills. Players engage in fun, accessible kart-style racing while improving focus, coordination, and sensory integration in a supportive environment.",
+        "genres": [
+          "Casual",
+          "Educational",
+          "Racing"
+        ],
+        "name": "KarTEA: Racing Game",
+        "pc_requirements": {
+          "minimum": {
+            "cpu": "Intel Core i3 or equivalent",
+            "graphics": "Intel HD Graphics 4000 or higher",
+            "memory": "4 GB RAM",
+            "notes": "Requires a webcam and a projector for sensory interaction.",
+            "os": "Windows 10 (64-bit)",
+            "storage": "500 MB available space"
+          },
+          "recommended": {
+            "cpu": "Intel Core i5 or equivalent",
+            "graphics": "NVIDIA GeForce GTX 1050 or higher",
+            "memory": "8 GB RAM",
+            "notes": "Requires a webcam and a projector for sensory interaction.",
+            "os": "Windows 10/11 (64-bit)",
+            "storage": "1 GB available space"
+          }
+        },
+        "short_description": "A game to aid in the development of sensory processing.",
+        "specs": [
+          "Full controller support",
+          "Single-player"
+        ],
+        "tags": [
+          "Accessibility",
+          "Educational",
+          "Pygame",
+          "Python",
+          "Sensory Processing"
+        ]
+      },
+      "es_ES": {
+        "about_the_game": "Desarrollado para ayudar a niños y personas con desafíos en el procesamiento sensorial a través de una jugabilidad atractiva. Construido con Python y Pygame para accesibilidad multiplataforma.",
+        "content_notes": "Juego educativo centrado en el desarrollo del procesamiento sensorial. Apto para todas las edades, incluidos niños con necesidades especiales.",
+        "detailed_description": "KarTEA es un juego de carreras educativo diseñado para apoyar el desarrollo de habilidades de procesamiento sensorial. Los jugadores participan en divertidas carreras estilo kart accesibles mientras mejoran la concentración, la coordinación y la integración sensorial en un entorno de apoyo.",
+        "genres": [
+          "Carreras",
+          "Casual",
+          "Educativo"
+        ],
+        "name": "KarTEA: Juego de Carreras",
+        "pc_requirements": {
+          "minimum": {
+            "cpu": "Intel Core i3 o equivalente",
+            "graphics": "Intel HD Graphics 4000 o superior",
+            "memory": "4 GB de RAM",
+            "notes": "Requiere una cámara web y un proyector para la interacción sensorial.",
+            "os": "Windows 10 (64 bits)",
+            "storage": "500 MB de espacio disponible"
+          },
+          "recommended": {
+            "cpu": "Intel Core i5 o equivalente",
+            "graphics": "NVIDIA GeForce GTX 1050 o superior",
+            "memory": "8 GB de RAM",
+            "notes": "Requiere una cámara web y un proyector para la interacción sensorial.",
+            "os": "Windows 10/11 (64 bits)",
+            "storage": "1 GB de espacio disponible"
+          }
+        },
+        "short_description": "Un juego para ayudar en el desarrollo del procesamiento sensorial.",
+        "specs": [
+          "Compatibilidad total con mando",
+          "Un solo jugador"
+        ],
+        "tags": [
+          "Accesibilidad",
+          "Educativo",
+          "Procesamiento Sensorial",
+          "Pygame",
+          "Python"
+        ]
+      },
+      "pt_BR": {
+        "about_the_game": "Desenvolvido para ajudar crianças e pessoas com desafios no processamento sensorial por meio de uma jogabilidade envolvente. Construído com Python e Pygame para acessibilidade multiplataforma.",
+        "content_notes": "Jogo educacional focado no desenvolvimento do processamento sensorial. Indicado para todas as idades, incluindo crianças com necessidades especiais.",
+        "detailed_description": "KarTEA é um jogo de corrida educacional projetado para apoiar o desenvolvimento de habilidades de processamento sensorial. Os jogadores participam de corridas divertidas e acessíveis no estilo kart, melhorando o foco, a coordenação e a integração sensorial em um ambiente acolhedor.",
+        "genres": [
+          "Casual",
+          "Corrida",
+          "Educacional"
+        ],
+        "name": "KarTEA: Jogo de Corrida",
+        "pc_requirements": {
+          "minimum": {
+            "cpu": "Intel Core i3 ou equivalente",
+            "graphics": "Intel HD Graphics 4000 ou superior",
+            "memory": "4 GB de RAM",
+            "notes": "Requer uma webcam e um projetor para a interação sensorial.",
+            "os": "Windows 10 (64 bits)",
+            "storage": "500 MB de espaço disponível"
+          },
+          "recommended": {
+            "cpu": "Intel Core i5 ou equivalente",
+            "graphics": "NVIDIA GeForce GTX 1050 ou superior",
+            "memory": "8 GB de RAM",
+            "notes": "Requer uma webcam e um projetor para a interação sensorial.",
+            "os": "Windows 10/11 (64 bits)",
+            "storage": "1 GB de espaço disponível"
+          }
+        },
+        "short_description": "Um jogo para auxiliar no desenvolvimento do processamento sensorial.",
+        "specs": [
+          "Compatibilidade total com controle",
+          "Um jogador"
+        ],
+        "tags": [
+          "Acessibilidade",
+          "Educativo",
+          "Processamento Sensorial",
+          "Pygame",
+          "Python"
+        ]
+      }
+    },
+    "supported_languages": [
+      "en_US",
+      "es_ES",
+      "pt_BR"
+    ]
+  },
+  "metadata_version": "1.0",
+  "platforms": {
+    "linux": true,
+    "mac": true,
+    "windows": true
+  },
+  "publisher": [
+    {
+      "company": "UDESC - CCT - Joinville",
+      "contact_email": "",
+      "website": ""
+    }
+  ],
+  "release_date": {
+    "coming_soon": false,
+    "date": "2023"
+  },
+  "required_age": 0,
+  "screenshots": [""],
+  "type": "game",
+  "version": "2.0.0"
+}

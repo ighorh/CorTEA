@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>udescjoinvilletteaview.selectplayerview &mdash; ttea 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ttea
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">T-TEA2.0-1</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ttea</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">udescjoinvilletteaview.selectplayerview</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for udescjoinvilletteaview.selectplayerview</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtWidgets</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">QWidget</span><span class="p">,</span> 
+                               <span class="n">QDialog</span><span class="p">,</span> 
+                               <span class="n">QTableWidget</span><span class="p">,</span>
+                               <span class="n">QTableWidgetItem</span><span class="p">,</span> 
+                               <span class="n">QHBoxLayout</span><span class="p">,</span> 
+                               <span class="n">QLabel</span><span class="p">,</span>
+                               <span class="n">QAbstractItemView</span><span class="p">,</span>
+                               <span class="n">QSplitter</span><span class="p">,</span>
+                               <span class="n">QHeaderView</span><span class="p">,</span>
+                               <span class="n">QFormLayout</span><span class="p">,</span>
+                               <span class="n">QLineEdit</span><span class="p">,</span>
+                               <span class="n">QDateEdit</span><span class="p">,</span>
+                               <span class="n">QTextEdit</span><span class="p">,</span>
+                               <span class="n">QPushButton</span><span class="p">,</span>
+                               <span class="n">QLayout</span><span class="p">,</span>
+                               <span class="n">QVBoxLayout</span><span class="p">)</span>
+
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Qt</span><span class="p">,</span> <span class="n">QDate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteaapp.windowconfig</span><span class="w"> </span><span class="kn">import</span> <span class="n">WindowConfig</span>
+
+
+<div class="viewcode-block" id="TableView">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.selectplayerview.TableView">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TableView</span><span class="p">(</span><span class="n">QTableWidget</span><span class="p">):</span> 
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span> 
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">300</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">300</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">);</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">setRowCount</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setColumnCount</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span><span class="o">.</span><span class="n">setSectionResizeMode</span><span class="p">(</span><span class="n">QHeaderView</span><span class="o">.</span><span class="n">Stretch</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setSelectionMode</span><span class="p">(</span><span class="n">QAbstractItemView</span><span class="o">.</span><span class="n">SingleSelection</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setSelectionBehavior</span><span class="p">(</span><span class="n">QAbstractItemView</span><span class="o">.</span><span class="n">SelectRows</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">setHorizontalHeaderLabels</span><span class="p">([</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Nome&quot;</span><span class="p">,</span> <span class="s2">&quot;Data Nascimento&quot;</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+
+    
+<div class="viewcode-block" id="TableView.update_table_items">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.selectplayerview.TableView.update_table_items">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_table_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_list</span><span class="p">):</span>
+    
+        <span class="n">row_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">item_list</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_size</span><span class="p">):</span>
+            
+            <span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">item_list</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> 
+
+                <span class="n">item</span> <span class="o">=</span> <span class="n">QTableWidgetItem</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+                <span class="n">item</span><span class="o">.</span><span class="n">setFlags</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">flags</span><span class="p">()</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">Qt</span><span class="o">.</span><span class="n">ItemFlag</span><span class="o">.</span><span class="n">ItemIsEditable</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">setItem</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span></div>
+</div>
+
+        
+        
+
+
+<div class="viewcode-block" id="RowDatailed">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.selectplayerview.RowDatailed">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RowDatailed</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span> 
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>  
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span> 
+
+
+        <span class="n">main_layout</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">()</span>
+
+        <span class="c1"># Form Title </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">h1</span> <span class="o">=</span>  <span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;Informação&quot;</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignHCenter</span><span class="p">,</span> <span class="n">ObjectName</span> <span class="o">=</span> <span class="s2">&quot;titulo&quot;</span><span class="p">)</span>
+
+        <span class="c1">#Form </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name_input</span> <span class="o">=</span> <span class="n">QLineEdit</span><span class="p">(</span><span class="n">text</span><span class="o">=</span> <span class="s2">&quot;Luis Eduardo Bet&quot;</span><span class="p">,</span> <span class="n">readOnly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># self.name_input.setPlaceholderText(&quot;Digite o nome&quot;)  # Placeholder para orientação</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth_date_input</span> <span class="o">=</span> <span class="n">QDateEdit</span><span class="p">(</span><span class="n">readOnly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Ativa o popup do calendário</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth_date_input</span><span class="o">.</span><span class="n">setDate</span><span class="p">(</span><span class="n">QDate</span><span class="o">.</span><span class="n">fromString</span><span class="p">(</span><span class="s2">&quot;22/10/2003&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth_date_input</span><span class="o">.</span><span class="n">setDisplayFormat</span><span class="p">(</span><span class="s2">&quot;dd/MM/yyyy&quot;</span><span class="p">)</span>  <span class="c1"># Formato dd/mm/aaaa</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth_date_input</span><span class="o">.</span><span class="n">setToolTip</span><span class="p">(</span><span class="s2">&quot;Digite a data no formato dd/mm/aaaa ou use o calendário&quot;</span><span class="p">)</span>  <span class="c1"># Dica para formato</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth_date_input</span><span class="o">.</span><span class="n">setSpecialValueText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>  <span class="c1"># Evita texto padrão para data inválida</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observations_input</span> <span class="o">=</span> <span class="n">QTextEdit</span><span class="p">(</span><span class="n">plainText</span><span class="o">=</span><span class="s2">&quot;asdasdasdaskasfnas asdmaskdpamsdkpmas&quot;</span><span class="p">,</span> <span class="n">readOnly</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Layout</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">QFormLayout</span><span class="p">()</span>
+        <span class="n">form</span><span class="o">.</span><span class="n">addRow</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;Nome:&quot;</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignRight</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">name_input</span><span class="p">)</span>
+        <span class="n">form</span><span class="o">.</span><span class="n">addRow</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;Data de Nascimento:&quot;</span><span class="p">,</span><span class="n">alignment</span><span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignRight</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">birth_date_input</span><span class="p">)</span>
+        <span class="n">form</span><span class="o">.</span><span class="n">addRow</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;Observações:&quot;</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignRight</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">observations_input</span><span class="p">)</span>
+
+        <span class="n">buttons_layout</span> <span class="o">=</span>  <span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edit_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;Editar Jogador&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">insert_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;Novo Jogador&quot;</span><span class="p">)</span>
+
+        <span class="n">buttons_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edit_button</span><span class="p">)</span>
+        <span class="n">buttons_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">insert_button</span><span class="p">)</span>
+
+
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h1</span><span class="p">)</span>
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+        <span class="n">main_layout</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">buttons_layout</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_style</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">main_layout</span><span class="p">)</span>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_style</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+    
+        <span class="bp">self</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                           </span>
+<span class="s2">        QLabel#titulo{</span>
+<span class="s2">            font: bold 20px;  </span>
+<span class="s2">        </span>
+<span class="s2">        }</span>
+<span class="s2">                           </span>
+<span class="s2">                           &quot;&quot;&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SelectPlayerView">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.selectplayerview.SelectPlayerView">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SelectPlayerView</span><span class="p">(</span><span class="n">QDialog</span><span class="p">,</span> <span class="n">WindowConfig</span><span class="p">):</span> 
+
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="s2">&quot;Jogadores&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup_window</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">TITLE</span><span class="p">,</span>                          
+            <span class="n">parent</span><span class="o">.</span><span class="n">windowIcon</span><span class="p">()</span> <span class="k">if</span> <span class="n">parent</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>  
+            <span class="n">WindowConfig</span><span class="o">.</span><span class="n">DECREMENT_SIZE_PERCENT</span><span class="p">,</span> 
+            <span class="mi">10</span><span class="p">,</span>                                  
+            <span class="mi">10</span><span class="p">,</span>                                  
+            <span class="n">parent</span>                               
+        <span class="p">)</span>
+
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">TableView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rowdetailed</span> <span class="o">=</span> <span class="n">RowDatailed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rowdetailed</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+
+    
+<div class="viewcode-block" id="SelectPlayerView.get_edit_button">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.selectplayerview.SelectPlayerView.get_edit_button">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_edit_button</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowdetailed</span><span class="o">.</span><span class="n">edit_button</span></div>
+
+
+<div class="viewcode-block" id="SelectPlayerView.get_insert_button">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.selectplayerview.SelectPlayerView.get_insert_button">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_insert_button</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowdetailed</span><span class="o">.</span><span class="n">insert_button</span></div>
+
+    
+<div class="viewcode-block" id="SelectPlayerView.update_table">
+<a class="viewcode-back" href="../../udescjoinvilletteaview.html#udescjoinvilletteaview.selectplayerview.SelectPlayerView.update_table">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">update_table_items</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> </div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025-2025, Udesc - Larva.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

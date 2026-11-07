@@ -1,0 +1,106 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+
+    <!-- ============================================= -->
+    <!-- Imagens - prefixo principal /images           -->
+    <!-- ============================================= -->
+
+    <qresource prefix="/images">
+        <!-- Carros -->
+        <file alias="vehicle/defaultvehicle">images/vehicle/carro.png</file>
+        <file alias="vehicle/variant1vehicle">images/vehicle/carro1.png</file>
+
+        <!-- Ambiente -->
+        <file alias="environment/grass">images/environment/grass.png</file>
+        <file alias="environment/tree/defaultenvironment">images/environment/tree.png</file>
+        <file alias="environment/tree/variant1environment">images/environment/tree1.png</file>
+        <file alias="environment/gasstation">images/environment/gasstation.png</file>
+
+        <!-- Obstáculos -->
+        <file alias="obstacle/defaultobstacle">images/obstacle/obstaculo.png</file>
+        <file alias="obstacle/variant1obstacle">images/obstacle/obstaculo1.png</file>
+
+        <!-- Feedback -->
+        <file alias="feedback/positive">images/positive_feedback/feliz.png</file>
+        <file alias="feedback/neutral">images/neutral_feedback/neutro.png</file>
+        <file alias="feedback/negative">images/negative_feedback/triste.png</file>
+
+        <!-- Alvos / Estrelas / Pontuação -->
+        <file alias="target/star/defaultstar">images/target/star.png</file>
+        <file alias="target/star/smallstar">images/target/star1.png</file>
+        <file alias="target/star/star50">images/target/star50.png</file>
+        <file alias="target/star/star100">images/target/star100.png</file>
+        <file alias="target/star/star150">images/target/star150.png</file>
+
+        <!-- Interface e fundos -->
+        <file alias="ui/background/menu">images/background_menu.png</file>
+        <file alias="ui/background/game">images/background.png</file>
+        <file alias="ui/horizon">images/horizon.png</file>
+        <file alias="ui/bottom">images/fundo.png</file>
+        <file alias="ui/finish">images/finish.png</file>
+
+        <!-- HUD -->
+        <file alias="hud/on">images/hud_on.png</file>
+        <file alias="hud/off">images/hud_off.png</file>
+
+        <!-- Ícones e botões -->
+        <file alias="icon/app">images/icone.png</file>
+        <file alias="icon/help">images/ajuda_f1.png</file>
+        <file alias="icon/warning">images/avisos.png</file>
+        <file alias="icon/calibrate">images/calibrar.png</file>
+        <file alias="icon/sound">images/som.png</file>
+        <file alias="icon/time">images/tempo.png</file>
+        <file alias="icon/no-signal">images/sem_sinal.png</file>
+
+        <!-- Troféus -->
+        <file alias="trophy/trophy25">images/trofeu_25.png</file>
+        <file alias="trophy/trophy50">images/trofeu_50.png</file>
+        <file alias="trophy/trophy75">images/trofeu_75.png</file>
+        <file alias="trophy/goldtrophy">images/trofeu.png</file>
+
+        <!-- Logo -->
+        <file alias="logo/ttea">images/ttea_logo.xcf</file>  <!-- manter só se realmente usar -->
+    </qresource>
+
+    <!-- ============================================= -->
+    <!-- Sons                                          -->
+    <!-- ============================================= -->
+
+    <qresource prefix="/sounds">
+        <!-- Feedback positivo -->
+        <file alias="feedback/positive/hit">sounds/positive_feedback/acertou.wav</file>
+        <file alias="feedback/positive/hit1">sounds/positive_feedback/acertou1.wav</file>
+        <file alias="feedback/positive/hit2">sounds/positive_feedback/acertou2.wav</file>
+
+        <!-- Feedback negativo / erro -->
+        <file alias="feedback/negative/error">sounds/negative_feedback/errou.wav</file>
+        <file alias="feedback/negative/error1">sounds/negative_feedback/errou1.wav</file>
+
+        <!-- Feedback neutro -->
+        <file alias="feedback/neutral/miss">sounds/neutral_feedback/miss.wav</file>
+
+        <!-- Sons de jogo gerais -->
+        <file alias="game/crash">sounds/crash.wav</file>
+        <file alias="game/point">sounds/point.wav</file>
+        <file alias="game/win">sounds/win.wav</file>
+        <file alias="game/time">sounds/clocktick.wav</file>
+    </qresource>
+
+    <!-- ============================================= -->
+    <!-- Interfaces (arquivos .ui)                     -->
+    <!-- ============================================= -->
+
+    <qresource prefix="/ui">
+        <file alias="playerconfig/edit">ui/playerkarteaconfigeditview.ui</file>
+        <file alias="playerconfig/list">ui/playerkarteaconfiglistview.ui</file>
+    </qresource>
+
+    <!-- ============================================= -->
+    <!-- Phases (files .csv)                     -->
+    <!-- ============================================= -->
+     <qresource prefix="/phases">
+        <file alias="1">phases/1.csv</file>
+        <file alias="2">phases/2.csv</file>
+        <file alias="3">phases/3.csv</file>
+    </qresource>
+</RCC>

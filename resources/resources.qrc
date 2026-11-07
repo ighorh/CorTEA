@@ -1,0 +1,85 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <!-- Flags -->
+    <qresource prefix="/flags">
+        <file alias="brazil">flags/brazil.png</file>
+        <file alias="spain">flags/spain.png</file>
+        <file alias="usa">flags/usa.png</file>
+    </qresource>
+
+    <!-- Icons -->
+    <qresource prefix="/icons/system">
+        <file alias="appicon">icons/system/larva.ico</file>
+    </qresource>
+
+    <qresource prefix="/icons/ui/buttons">
+        <file alias="okicon">icons/ui/buttons/check_solid.png</file>
+        <file alias="editicon">icons/ui/buttons/pen_square_solid.png</file>
+        <file alias="playicon">icons/ui/buttons/play_circle_solid.png</file>
+        <file alias="newicon">icons/ui/buttons/plus_solid.png</file>
+        <file alias="cancelicon">icons/ui/buttons/times_solid.png</file>
+        <file alias="trashicon">icons/ui/buttons/trash_solid.png</file>
+    </qresource>
+
+    <qresource prefix="/icons/ui/menu">
+        <file alias="buildingicon">icons/ui/menu/building_solid.png</file> 
+        <file alias="cameraicon">icons/ui/menu/camera_solid.png</file>
+        <file alias="cogsicon">icons/ui/menu/cogs_solid.png</file>
+        <file alias="dooropenicon">icons/ui/menu/door_open_solid.png</file>
+        <file alias="flagicon">icons/ui/menu/flag_solid.png</file>
+        <file alias="gamepadicon">icons/ui/menu/gamepad_solid.png</file>   
+        <file alias="hospitalicon">icons/ui/menu/hospital_solid.png</file>
+        <file alias="idcardicon">icons/ui/menu/id_card_solid.png</file> 
+        <file alias="infoicon">icons/ui/menu/info_circle_solid.png</file>
+        <file alias="info2icon">icons/ui/menu/info_solid.png</file>
+        <file alias="karteaicon">icons/ui/menu/kartea.ico</file>
+        <file alias="kartea2icon">icons/ui/menu/kartea2.ico</file>
+        <file alias="kartea3icon">icons/ui/menu/kartea3.ico</file>
+        <file alias="kartea4icon">icons/ui/menu/kartea4.ico</file>
+        <file alias="questionicon">icons/ui/menu/question_circle_solid.png</file>
+        <file alias="question2icon">icons/ui/menu/question_solid.png</file>
+        <file alias="stethoscopeicon">icons/ui/menu/stethoscope_solid.png</file>
+        <file alias="userticon">icons/ui/menu/user_solid.png</file>
+        <file alias="videoicon">icons/ui/menu/video_solid.png</file>
+        <file alias="wrenchicon">icons/ui/menu/wrench_solid.png</file>
+    </qresource>          
+
+    <!-- Images -->
+    <qresource prefix="/images">     
+        <file alias="calibrationen">images/calibration_en.png</file>  
+        <file alias="calibrationes">images/calibration_es.png</file>     
+        <file alias="calibrationpt">images/calibration_pt.png</file>  
+        <file alias="calibrationoken">images/calibrationok_en.png</file> 
+        <file alias="calibrationokes">images/calibrationok_es.png</file>
+        <file alias="calibrationokpt">images/calibrationok_pt.png</file>  
+        <file alias="kartealogo">images/kartealogo.jpg</file>  
+        <file alias="larvaico">images/larvaico.png</file>      
+        <file alias="ttealogo">images/ttealogo.png</file>
+        <file alias="warningen">images/warning_en.png</file>
+        <file alias="warninges">images/warning_es.png</file>
+        <file alias="warningpt">images/warning_pt.png</file>
+    </qresource>
+
+    <!-- Translations -->
+    <qresource prefix="/translations">
+        <file alias="pt">translations/pt_BR.qm</file>
+        <file alias="es">translations/es_ES.qm</file>
+        <file alias="en">translations/en_US.qm</file>
+    </qresource>
+
+    <!-- Interfaces (UI) -->
+    <qresource prefix="/ui">
+        <file alias="aboutviewui">ui/aboutview.ui</file>
+        <file alias="calibrationsettingviewui">ui/calibrationsettingview.ui</file>
+        <file alias="calibrationviewui">ui/calibrationview.ui</file>
+        <file alias="professionaleditviewui">ui/professionaleditview.ui</file>
+        <file alias="professionallistviewui">ui/professionallistview.ui</file>
+        <file alias="institutionfacilityeditviewui">ui/institutionfacilityeditview.ui</file>
+        <file alias="institutionfacilitylistviewui">ui/institutionfacilitylistview.ui</file>
+        <file alias="languageviewui">ui/languageview.ui</file>
+        <file alias="mainviewui">ui/mainview.ui</file>
+        <file alias="playereditviewui">ui/playereditview.ui</file>
+        <file alias="playergamelaunchviewui">ui/playereditview.ui</file>
+        <file alias="playerlistviewui">ui/playerlistview.ui</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>ttea.qt.helppt</namespace>
+    <virtualFolder>help</virtualFolder>
+    <homePage>index.html</homePage>
+    <filterSection>
+        <toc>
+            <section title="T-TEA Ajuda" ref="index.html">
+                <section title="Plataforma" ref="plataforma.html"></section>
+                <section title="KarTea" ref="kartea.html"></section>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Plataforma" ref="plataforma.html"/>
+            <keyword name="KarTea" ref="kartea.html"/>
+        </keywords>
+        <files>
+            <file>index.html</file>
+            <file>plataforma.html</file>
+            <file>kartea.html</file>
+            <file>imagens/plataforma.png</file>
+            <file>imagens/ttealogo.png</file>
+            <file>imagens/kartea/kartea1.png</file>
+            <file>imagens/kartea/kartea2.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

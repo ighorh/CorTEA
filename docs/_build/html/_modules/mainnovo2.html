@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mainnovo2 &mdash; ttea 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ttea
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">T-TEA2.0-1</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ttea</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">mainnovo2</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for mainnovo2</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">QSettings</span><span class="p">,</span> <span class="n">QTimer</span><span class="p">,</span> <span class="n">QTranslator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtGui</span><span class="w"> </span><span class="kn">import</span> <span class="n">QIcon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySide6.QtWidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMessageBox</span>
+
+<span class="c1"># Importações de módulos locais</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteaapp.tteaapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">TTeaApp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteautil.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">Log</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteautil.pathconfig</span><span class="w"> </span><span class="kn">import</span> <span class="n">PathConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteamodel.language</span><span class="w"> </span><span class="kn">import</span> <span class="n">Language</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteaview.languageview</span><span class="w"> </span><span class="kn">import</span> <span class="n">LanguageView</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteacontroller.languagecontroller</span><span class="w"> </span><span class="kn">import</span> <span class="n">LanguageController</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">udescjoinvilletteaview.splashscreen</span><span class="w"> </span><span class="kn">import</span> <span class="n">SplashScreen</span>
+
+
+<div class="viewcode-block" id="AppLauncher">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AppLauncher</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe responsável por iniciar e gerenciar a aplicação.</span>
+
+<span class="sd">    Esta classe lida com a inicialização do QApplication, carregamento</span>
+<span class="sd">    de configurações, gerenciamento de tradução, exibição da splash screen</span>
+<span class="sd">    e da tela de seleção de idioma, e o tratamento de erros globais.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">GENERAL_LANGUAGE</span> <span class="o">=</span> <span class="s2">&quot;Geral/idioma&quot;</span>
+    <span class="n">GENERAL_DATE_MASK</span> <span class="o">=</span> <span class="s2">&quot;Geral/data&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa o AppLauncher, configurando o logger, a aplicação Qt,</span>
+<span class="sd">        o tradutor, o modelo de idioma e as configurações.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">Log</span><span class="p">(</span><span class="n">log_file</span><span class="o">=</span><span class="n">Log</span><span class="o">.</span><span class="n">FILE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">translator</span> <span class="o">=</span> <span class="n">QTranslator</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language_model</span> <span class="o">=</span> <span class="n">Language</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splash</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main_window</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language_view</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language_controller</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span> <span class="o">=</span> <span class="n">QSettings</span><span class="p">(</span><span class="n">PathConfig</span><span class="o">.</span><span class="n">inifile</span><span class="p">(</span><span class="s2">&quot;config.ini&quot;</span><span class="p">),</span> <span class="n">QSettings</span><span class="o">.</span><span class="n">IniFormat</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Carrega o tradutor no início para garantir disponibilidade</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_translator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_initial_language</span><span class="p">())</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_initial_language</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Determina o idioma inicial com base nas configurações existentes ou no idioma do sistema.</span>
+
+<span class="sd">        Prioriza o idioma salvo nas configurações, depois o idioma do sistema (se suportado),</span>
+<span class="sd">        e finalmente o idioma padrão da aplicação.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: O código do idioma a ser usado.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">system_language</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">language_model</span><span class="o">.</span><span class="n">get_system_language</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+        <span class="n">supported_languages</span> <span class="o">=</span> <span class="p">{</span><span class="n">lang</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">language_model</span><span class="o">.</span><span class="n">get_languages</span><span class="p">()}</span>
+        <span class="n">default_language</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">system_language</span> <span class="k">if</span> <span class="n">system_language</span> <span class="ow">in</span> <span class="n">supported_languages</span>
+            <span class="k">else</span> <span class="n">Language</span><span class="o">.</span><span class="n">DEFAULT_LANGUAGE</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Se o arquivo de configuração não existe, retorna o idioma padrão/sistema</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">fileName</span><span class="p">()):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Arquivo de configuração não encontrado. Usando idioma padrão: </span><span class="si">{</span><span class="n">default_language</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">default_language</span>
+
+        <span class="c1"># Tenta obter o idioma das configurações</span>
+        <span class="n">language_from_settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GENERAL_LANGUAGE</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">language_from_settings</span> <span class="ow">in</span> <span class="n">supported_languages</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Idioma encontrado nas configurações: </span><span class="si">{</span><span class="n">language_from_settings</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">language_from_settings</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Idioma nas configurações inválido ou ausente. Usando idioma padrão: </span><span class="si">{</span><span class="n">default_language</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">default_language</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_try_load_single_translation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">language_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tenta carregar um único arquivo de tradução para o código de idioma especificado.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            language_code (str): O código do idioma (ex: &quot;pt_BR&quot;, &quot;en_US&quot;).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True se a tradução foi carregada com sucesso, False caso contrário.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">translation_file</span> <span class="o">=</span> <span class="n">PathConfig</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">language_code</span><span class="si">}</span><span class="s2">.qm&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tentando carregar tradução: </span><span class="si">{</span><span class="n">translation_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">translation_file</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">translator</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">translation_file</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">installTranslator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">translator</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tradução carregada com sucesso: </span><span class="si">{</span><span class="n">language_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Arquivo de tradução não encontrado ou falha ao carregar: </span><span class="si">{</span><span class="n">translation_file</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_translator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">language</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carrega o tradutor para o idioma especificado com um fallback robusto</span>
+<span class="sd">        para o idioma padrão da aplicação, caso o idioma principal falhe.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            language (str): O código do idioma a ser carregado.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Tenta carregar o idioma principal</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_try_load_single_translation</span><span class="p">(</span><span class="n">language</span><span class="p">):</span>
+                <span class="k">return</span>
+
+            <span class="c1"># Se o idioma principal falhou e não é o padrão, tenta o padrão como fallback</span>
+            <span class="k">if</span> <span class="n">language</span> <span class="o">!=</span> <span class="n">Language</span><span class="o">.</span><span class="n">DEFAULT_LANGUAGE</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Falha ao carregar </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">. Tentando fallback para idioma padrão: &quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Language</span><span class="o">.</span><span class="n">DEFAULT_LANGUAGE</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_try_load_single_translation</span><span class="p">(</span><span class="n">Language</span><span class="o">.</span><span class="n">DEFAULT_LANGUAGE</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erro inesperado ao carregar tradução para </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="AppLauncher.start">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher.start">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicia o ciclo de vida da aplicação, exibindo a splash screen</span>
+<span class="sd">        e iniciando o loop de eventos do Qt.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="s2">&quot;Iniciando a aplicação.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">splash</span> <span class="o">=</span> <span class="n">SplashScreen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">translator</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">splash</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+            <span class="c1"># Usa singleShot para permitir que a splash screen seja exibida antes de verificar o idioma</span>
+            <span class="n">QTimer</span><span class="o">.</span><span class="n">singleShot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_language</span><span class="p">)</span>
+            <span class="n">exit_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="s2">&quot;Aplicação finalizada com sucesso.&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">exit_code</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handle_error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AppLauncher.check_language">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher.check_language">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_language</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verifica se é necessário exibir a tela de seleção de idioma</span>
+<span class="sd">        com base nas configurações existentes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">config_file_exists</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">fileName</span><span class="p">())</span>
+            <span class="n">language_setting</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GENERAL_LANGUAGE</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">config_file_exists</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">language_setting</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="s2">&quot;Configuração de idioma não encontrada. Exibindo seleção de idioma.&quot;</span><span class="p">)</span>
+                <span class="n">QTimer</span><span class="o">.</span><span class="n">singleShot</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_language_selection</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Idioma configurado (</span><span class="si">{</span><span class="n">language_setting</span><span class="si">}</span><span class="s2">) encontrado. Configurando janela principal.&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_load_translator</span><span class="p">(</span><span class="n">language_setting</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">setup_main_window</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handle_error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AppLauncher.show_language_selection">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher.show_language_selection">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">show_language_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exibe a tela de seleção de idioma após a splash screen.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">splash</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">splash</span><span class="o">.</span><span class="n">isVisible</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">splash</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">splash</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="n">view</span> <span class="o">=</span> <span class="n">LanguageView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">translator</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">language_controller</span> <span class="o">=</span> <span class="n">LanguageController</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">language_model</span><span class="p">,</span> <span class="n">view</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">language_view</span> <span class="o">=</span> <span class="n">view</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">language_view</span><span class="o">.</span><span class="n">accepted</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_language_selected</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">language_view</span><span class="o">.</span><span class="n">rejected</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_language_cancel</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">language_view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="s2">&quot;Tela de seleção de idioma exibida.&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handle_error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AppLauncher.setup_main_window">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher.setup_main_window">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setup_main_window</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Configura a janela principal da aplicação (TTeaApp) e</span>
+<span class="sd">        finaliza a splash screen, se ainda estiver visível.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">main_window</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">main_window</span> <span class="o">=</span> <span class="n">TTeaApp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">translator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">splash</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">splash</span><span class="o">.</span><span class="n">isVisible</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">splash</span><span class="o">.</span><span class="n">finish</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">main_window</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">splash</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Limpa a referência após o uso</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">main_window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="s2">&quot;Janela principal configurada e exibida.&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handle_error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AppLauncher.on_language_selected">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher.on_language_selected">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">on_language_selected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Slot chamado quando um idioma é selecionado na tela de seleção.</span>
+<span class="sd">        Salva o idioma, carrega a tradução e prossegue para a janela principal.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">selected_language</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">language_controller</span><span class="o">.</span><span class="n">get_selected_language</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_language</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_warning</span><span class="p">(</span><span class="s2">&quot;Nenhum idioma foi selecionado. Cancelando.&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">on_language_cancel</span><span class="p">()</span>
+                <span class="k">return</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GENERAL_LANGUAGE</span><span class="p">,</span> <span class="n">selected_language</span><span class="p">)</span>
+
+            <span class="c1"># Define a máscara de data com base no idioma selecionado</span>
+            <span class="n">date_mask</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">/%m/%Y&quot;</span> <span class="k">if</span> <span class="n">selected_language</span> <span class="o">==</span> <span class="n">Language</span><span class="o">.</span><span class="n">DEFAULT_LANGUAGE</span> <span class="k">else</span> <span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GENERAL_DATE_MASK</span><span class="p">,</span> <span class="n">date_mask</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">sync</span><span class="p">()</span>  <span class="c1"># Garante que as configurações sejam salvas no arquivo</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Idioma selecionado e salvo: </span><span class="si">{</span><span class="n">selected_language</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_load_translator</span><span class="p">(</span><span class="n">selected_language</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setup_main_window</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handle_error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AppLauncher.on_language_cancel">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher.on_language_cancel">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">on_language_cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Slot chamado quando a seleção de idioma é cancelada.</span>
+<span class="sd">        Fecha todas as janelas e encerra a aplicação.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="s2">&quot;Seleção de idioma cancelada. Encerrando aplicação.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_all_windows</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AppLauncher.close_all_windows">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher.close_all_windows">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">close_all_windows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fecha todas as janelas da aplicação que estiverem abertas e visíveis.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">window</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">splash</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">language_view</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">main_window</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">window</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="s2">&quot;isVisible&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">window</span><span class="o">.</span><span class="n">isVisible</span><span class="p">():</span>
+                <span class="n">window</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="c1"># Limpa as referências para permitir a coleta de lixo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">splash</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">language_view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">main_window</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="s2">&quot;Todas as janelas foram fechadas.&quot;</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_translated_error_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constrói e tenta traduzir a mensagem de erro para exibição.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            exception (Exception): A exceção que ocorreu.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: A mensagem de erro formatada, traduzida se possível.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">base_message</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;Ocorreu um erro inesperado e a aplicação será encerrada.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;Por favor, contate o suporte.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;Detalhes do erro: </span><span class="si">{0}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="n">translated_message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">translator</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span>
+            <span class="s2">&quot;AppLauncher&quot;</span><span class="p">,</span>
+            <span class="n">base_message</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exception</span><span class="p">))</span>
+
+        <span class="c1"># Fallback para mensagem em texto puro se a tradução falhar ou retornar vazio</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">translated_message</span> <span class="ow">or</span> <span class="n">translated_message</span><span class="o">.</span><span class="n">isspace</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">base_message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exception</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">translated_message</span>
+
+<div class="viewcode-block" id="AppLauncher.handle_error">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.AppLauncher.handle_error">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Trata exceções globais, loga o erro, fecha todas as janelas</span>
+<span class="sd">        e exibe uma mensagem de erro crítica ao usuário antes de encerrar a aplicação.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            exception (Exception): A exceção que foi capturada.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span><span class="p">:</span>  <span class="c1"># Evita que o manipulador de erro seja chamado múltiplas vezes</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_has_error</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_warning</span><span class="p">(</span><span class="s2">&quot;Aplicação finalizada devido a um erro.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_error_with_stack</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close_all_windows</span><span class="p">()</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">QMessageBox</span><span class="p">()</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="n">TTeaApp</span><span class="o">.</span><span class="n">ICON_APP</span><span class="p">))</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="n">TTeaApp</span><span class="o">.</span><span class="n">get_title</span><span class="p">())</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Critical</span><span class="p">)</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_translated_error_message</span><span class="p">(</span><span class="n">exception</span><span class="p">))</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../mainnovo2.html#mainnovo2.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Função principal para iniciar a aplicação.</span>
+<span class="sd">    Cria uma instância de AppLauncher e chama seu método start.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">launcher</span> <span class="o">=</span> <span class="n">AppLauncher</span><span class="p">()</span>
+    <span class="n">launcher</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025-2025, Udesc - Larva.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
